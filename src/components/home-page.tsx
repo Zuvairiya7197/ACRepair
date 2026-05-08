@@ -74,42 +74,36 @@ const services = [
     tag: "Diagnostics",
     title: "AC Repair",
     copy: "Rapid diagnostics for cooling failure, leakage, noise, and sensor issues.",
-    detail: "Most faults fixed same day",
   },
   {
     icon: AirVent,
     tag: "Setup",
     title: "Installation",
     copy: "Clean split and window AC installs with precise mounting and airflow setup.",
-    detail: "Leveling, drainage, airflow check",
   },
   {
     icon: ThermometerSnowflake,
     tag: "Efficiency",
     title: "Gas Refill",
     copy: "Pressure-tested refrigerant refill for efficient cooling and lower power bills.",
-    detail: "Leak check before refill",
   },
   {
     icon: Snowflake,
     tag: "Care",
     title: "Maintenance",
     copy: "Deep cleaning, coil care, filter service, and preventive tune-ups.",
-    detail: "Cleaner air and faster cooling",
   },
   {
     icon: ShieldCheck,
     tag: "Protection",
     title: "Annual Care",
     copy: "Scheduled protection plans for homes, rentals, and office cooling systems.",
-    detail: "Priority visits all season",
   },
   {
     icon: Zap,
     tag: "Urgent",
     title: "Emergency Fix",
     copy: "Priority support for urgent breakdowns, available day and night.",
-    detail: "24/7 booking support",
   },
 ];
 
@@ -176,6 +170,14 @@ function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
       <path d="M6.9 8.9H3.2V21h3.7V8.9ZM5.1 3C3.9 3 3 3.8 3 4.9s.9 1.9 2.1 1.9 2.1-.8 2.1-1.9S6.3 3 5.1 3Zm8 5.9H9.6V21h3.7v-6.4c0-1.7.8-2.7 2.1-2.7 1.2 0 1.8.8 1.8 2.7V21H21v-6.9c0-3.5-1.8-5.5-4.5-5.5-1.6 0-2.8.8-3.4 1.7V8.9Z" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M12.1 2C6.6 2 2.2 6.4 2.2 11.8c0 1.8.5 3.5 1.4 5L2 22l5.4-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.5 2 12.1 2Zm0 17.9c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.2.8.9-3.1-.2-.3c-.8-1.2-1.2-2.7-1.2-4.2 0-4.4 3.6-8 8.1-8 4.4 0 8 3.6 8 8.1s-3.6 8-8 8Zm4.5-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3Z" />
     </svg>
   );
 }
@@ -387,7 +389,7 @@ function Navbar() {
           </a>
           <a
             href="#book"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#e3f5ef]/72 px-5 text-sm font-bold text-[#0f4c45] shadow-sm backdrop-blur-md transition hover:bg-white/88"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#0f4c45] px-5 text-sm font-black text-white shadow-[0_14px_34px_rgba(15,76,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#123f3b]"
           >
             Book a Repair
           </a>
@@ -445,7 +447,7 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-balance text-[clamp(2.25rem,4.8vw,4.4rem)] font-black leading-[1.05] tracking-normal text-[#0f4c45]"
             >
-              Fast AC Repair — When You Need It Most.
+              Get Your AC Cooling Again Today.
             </motion.h1>
             <motion.p
               variants={fadeUp}
@@ -461,13 +463,13 @@ export default function HomePage() {
             >
               <a
                 href="#book"
-                className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-black text-[#0c1514] shadow-[0_18px_48px_rgba(15,76,69,0.16)] transition hover:-translate-y-1 hover:bg-white/92"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-[#0f4c45] px-8 text-sm font-black text-white shadow-[0_18px_48px_rgba(15,76,69,0.22)] transition hover:-translate-y-1 hover:bg-[#123f3b]"
               >
                 Book a Repair
               </a>
               <a
                 href={`tel:${phone}`}
-                className="inline-flex h-14 items-center justify-center rounded-full bg-[#e3f5ef]/62 px-8 text-sm font-black text-[#3f9287] shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/78"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-[#0f4c45]/12 bg-white/78 px-8 text-sm font-black text-[#0f4c45] shadow-[0_14px_36px_rgba(15,76,69,0.1)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_44px_rgba(15,76,69,0.14)]"
               >
                 Get Estimate
               </a>
@@ -506,88 +508,59 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.18 }}
-          className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
+          className="relative px-4 py-24 sm:px-6 lg:px-8"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(188,235,221,0.58),transparent_24rem),radial-gradient(circle_at_82%_20%,rgba(205,235,255,0.46),transparent_26rem)]" />
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel>Expert cooling care</SectionLabel>
             <motion.div
               variants={fadeUp}
-              className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end"
+              className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"
             >
-              <div>
+              <div className="max-w-3xl">
                 <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-5xl">
-                  Premium AC services with zero guesswork.
+                  Premium AC services, clearly handled.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-[#527d78]">
-                  From urgent repairs to seasonal care, every visit includes a
-                  clear diagnosis, upfront pricing, clean workmanship, and final
-                  cooling performance checks.
+                <p className="mt-5 max-w-xl text-base leading-7 text-[#527d78]">
+                  Diagnostics, repair, installation, and care plans delivered
+                  with transparent pricing and clean workmanship.
                 </p>
               </div>
 
-              <div className="relative overflow-hidden rounded-[28px] border border-[#0f4c45]/10 bg-white/70 p-5 shadow-[0_26px_80px_rgba(15,76,69,0.12)] backdrop-blur-xl">
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(227,245,239,0.74),rgba(234,247,255,0.62))]" />
-                <div className="relative flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#0f4c45] text-white shadow-[0_18px_44px_rgba(15,76,69,0.2)]">
-                    <ThermometerSnowflake className="h-6 w-6 text-[#bcebdd]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-normal text-[#3f9287]">
-                      Same-day cooling audit
-                    </p>
-                    <h3 className="mt-2 text-xl font-black text-[#0f4c45]">
-                      We inspect, repair, test, and explain before we leave.
-                    </h3>
-                  </div>
-                </div>
-                <div className="relative mt-6 grid gap-3 sm:grid-cols-3">
-                  {["Verified techs", "Clear estimate", "Cooling proof"].map(
-                    (item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl bg-white/72 px-4 py-3 text-sm font-black text-[#0f4c45] shadow-sm"
-                      >
-                        <CheckCircle2 className="mb-2 h-4 w-4 text-[#3f9287]" />
-                        {item}
-                      </div>
-                    ),
-                  )}
-                </div>
+              <div className="flex flex-wrap gap-3">
+                {["Certified techs", "Same-day slots", "Upfront pricing"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center gap-2 rounded-full border border-[#0f4c45]/10 bg-white/76 px-4 py-2 text-sm font-black text-[#0f4c45] shadow-sm backdrop-blur"
+                    >
+                      <CheckCircle2 className="h-4 w-4 text-[#3f9287]" />
+                      {item}
+                    </span>
+                  ),
+                )}
               </div>
             </motion.div>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {services.map(({ icon: Icon, tag, title, copy, detail }, index) => (
+              {services.map(({ icon: Icon, tag, title, copy }) => (
                 <motion.article
                   key={title}
                   variants={fadeUp}
-                  whileHover={{ y: -10, scale: 1.015 }}
-                  className="group relative min-h-[310px] overflow-hidden rounded-[28px] border border-[#0f4c45]/10 bg-white/72 p-6 shadow-[0_18px_58px_rgba(15,76,69,0.08)] backdrop-blur-xl transition hover:border-[#3f9287]/28 hover:shadow-[0_30px_90px_rgba(15,76,69,0.16)]"
+                  whileHover={{ y: -7 }}
+                  className="group rounded-[26px] border border-[#0f4c45]/10 bg-white/78 p-6 shadow-[0_18px_54px_rgba(15,76,69,0.08)] backdrop-blur-xl transition hover:border-[#3f9287]/25 hover:bg-white/90 hover:shadow-[0_28px_78px_rgba(15,76,69,0.13)]"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(188,235,221,0.7),transparent_15rem),linear-gradient(145deg,rgba(255,255,255,0.74),rgba(234,247,255,0.3))] opacity-80 transition duration-500 group-hover:opacity-100" />
-                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-[#0f4c45]/10 bg-white/32 transition duration-500 group-hover:scale-125" />
-                  <div className="relative flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-4">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e3f5ef] text-[#0f4c45] shadow-sm transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#0f4c45] group-hover:text-white group-hover:shadow-[0_18px_44px_rgba(15,76,69,0.18)]">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <span className="rounded-full border border-[#0f4c45]/10 bg-white/68 px-3 py-1 text-xs font-black text-[#3f9287]">
-                      0{index + 1}
+                    <span className="rounded-full bg-[#eaf7ff] px-3 py-1 text-xs font-black uppercase tracking-normal text-[#3f9287]">
+                      {tag}
                     </span>
                   </div>
-                  <div className="relative mt-8">
-                    <p className="text-xs font-black uppercase tracking-normal text-[#3f9287]">
-                      {tag}
-                    </p>
-                    <h3 className="mt-3 text-2xl font-black tracking-normal text-[#0f4c45]">
-                      {title}
-                    </h3>
-                    <p className="mt-4 leading-7 text-[#527d78]">{copy}</p>
-                  </div>
-                  <div className="relative mt-7 flex items-center gap-3 border-t border-[#0f4c45]/10 pt-5 text-sm font-black text-[#0f4c45]">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#3f9287]" />
-                    {detail}
-                  </div>
+                  <h3 className="mt-8 text-2xl font-black tracking-normal text-[#0f4c45]">
+                    {title}
+                  </h3>
+                  <p className="mt-4 leading-7 text-[#527d78]">{copy}</p>
                 </motion.article>
               ))}
             </div>
@@ -645,10 +618,6 @@ export default function HomePage() {
               <h2 className="max-w-3xl text-4xl font-black tracking-normal text-[#0f4c45] sm:text-5xl">
                 Five calm steps from warm air to cool comfort.
               </h2>
-              <p className="max-w-md text-base leading-7 text-[#527d78]">
-                Tap or hover through the service flow. Each step stays simple,
-                secure, and built around your schedule.
-              </p>
             </motion.div>
 
             <div
@@ -701,7 +670,7 @@ export default function HomePage() {
 
         <section
           id="reviews"
-          className="relative overflow-hidden bg-[#eef8f5] py-24"
+          className="relative overflow-x-hidden bg-[#eef8f5] py-24"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(188,235,221,0.78),transparent_25rem),radial-gradient(circle_at_86%_16%,rgba(205,235,255,0.52),transparent_28rem),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(238,248,245,0.78))]" />
           <motion.div
@@ -745,7 +714,7 @@ export default function HomePage() {
               </div>
             </motion.div>
           </motion.div>
-          <div className="relative mt-12 flex [mask-image:linear-gradient(90deg,transparent,black_9%,black_91%,transparent)]">
+          <div className="relative mt-8 flex py-6 [mask-image:linear-gradient(90deg,transparent,black_9%,black_91%,transparent)]">
             <motion.div
               className="flex gap-6 px-4 sm:px-6 lg:px-8"
               animate={{ x: ["0%", "-50%"] }}
@@ -754,13 +723,9 @@ export default function HomePage() {
               {marqueeItems.map((item, index) => (
                 <figure
                   key={`${item.name}-${index}`}
-                  className="group relative min-h-[270px] w-[320px] shrink-0 overflow-hidden rounded-[28px] border border-[#0f4c45]/10 bg-white/74 p-5 shadow-[0_22px_70px_rgba(15,76,69,0.11)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#3f9287]/30 hover:shadow-[0_34px_100px_rgba(15,76,69,0.18)] sm:w-[410px]"
+                  className="group flex min-h-[245px] w-[320px] shrink-0 flex-col rounded-[26px] border border-[#0f4c45]/10 bg-white/82 p-5 shadow-[0_18px_54px_rgba(15,76,69,0.1)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#3f9287]/25 hover:bg-white/92 hover:shadow-[0_28px_76px_rgba(15,76,69,0.15)] sm:w-[390px]"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(188,235,221,0.72),transparent_16rem),linear-gradient(145deg,rgba(255,255,255,0.82),rgba(234,247,255,0.34))] opacity-90 transition duration-500 group-hover:opacity-100" />
-                  <div className="absolute -right-8 -top-10 text-[9rem] font-black leading-none text-[#0f4c45]/[0.045]">
-                    ”
-                  </div>
-                  <div className="relative flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-4">
                     <div className="flex gap-1 text-[#3f9287]">
                       {Array.from({ length: 5 }).map((_, starIndex) => (
                         <Star
@@ -774,32 +739,29 @@ export default function HomePage() {
                       Verified
                     </span>
                   </div>
-                  <blockquote className="relative mt-6 min-h-20 text-lg font-black leading-7 tracking-normal text-[#0f4c45] sm:text-xl sm:leading-8">
+                  <blockquote className="mt-5 text-lg font-black leading-7 tracking-normal text-[#0f4c45]">
                     “{item.review}”
                   </blockquote>
-                  <div className="relative mt-6 rounded-[22px] border border-[#0f4c45]/10 bg-white/68 p-3 shadow-sm">
-                    <div className="flex items-center gap-4">
-                      <div className="relative">
-                        <div className="absolute inset-0 rounded-2xl bg-[#3f9287]/22 blur-md" />
-                        <Image
-                          src={item.avatar}
-                          alt={`${item.name} customer portrait`}
-                          width={50}
-                          height={50}
-                          sizes="50px"
-                          className="relative h-[50px] w-[50px] rounded-2xl object-cover ring-2 ring-white"
-                        />
-                      </div>
+                  <div className="mt-auto flex items-center justify-between gap-4 pt-6">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <Image
+                        src={item.avatar}
+                        alt={`${item.name} customer portrait`}
+                        width={46}
+                        height={46}
+                        sizes="46px"
+                        className="h-[46px] w-[46px] shrink-0 rounded-2xl object-cover ring-2 ring-[#e3f5ef]"
+                      />
                       <div className="min-w-0">
-                        <figcaption className="font-black text-[#0f4c45]">
+                        <figcaption className="truncate font-black text-[#0f4c45]">
                           {item.name}
                         </figcaption>
-                        <div className="text-sm font-bold text-[#527d78]">
+                        <div className="truncate text-sm font-bold text-[#527d78]">
                           {item.role}
                         </div>
                       </div>
                     </div>
-                    <div className="mt-3 text-xs font-black uppercase tracking-normal text-[#3f9287]">
+                    <div className="shrink-0 rounded-full bg-[#e3f5ef] px-3 py-1 text-xs font-black text-[#3f9287]">
                       {item.service}
                     </div>
                   </div>
@@ -988,7 +950,7 @@ export default function HomePage() {
           aria-label="Book on WhatsApp"
           className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3f9287] text-white shadow-[0_20px_60px_rgba(15,76,69,0.18)] transition hover:-translate-y-1"
         >
-          <Headphones className="h-6 w-6" />
+          <WhatsAppIcon className="h-6 w-6" />
         </a>
         <a
           href={`tel:${phone}`}

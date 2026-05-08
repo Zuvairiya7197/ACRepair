@@ -9,7 +9,6 @@
   --process-muted: #557f79;
   --process-mint: #ddf7ef;
   --process-blue: #eaf7ff;
-  --process-panel: rgba(255, 255, 255, 0.68);
   --process-border: rgba(15, 76, 69, 0.12);
   --process-shadow: 0 28px 90px rgba(15, 76, 69, 0.13);
   --process-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -35,13 +34,6 @@ body {
 
 ::selection {
   background: rgba(63, 146, 135, 0.24);
-}
-
-.glass {
-  border: 1px solid rgba(255, 255, 255, 0.56);
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 20px 70px rgba(4, 28, 57, 0.12);
-  backdrop-filter: blur(22px);
 }
 
 .text-balance {
