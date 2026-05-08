@@ -443,7 +443,7 @@ export default function HomePage() {
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="relative mx-auto mt-52 flex w-full max-w-6xl flex-col items-center text-center sm:mt-64 lg:mt-80"
+            className="relative mx-auto mt-60 flex w-full max-w-6xl flex-col items-center text-center sm:mt-64 lg:mt-80"
           >
             <motion.h1
               variants={fadeUp}
