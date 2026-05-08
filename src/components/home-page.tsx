@@ -471,7 +471,6 @@ export default function HomePage() {
               <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
                 Get Your AC Cooling
               </span>
-              <br className="sm:hidden" />
               <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
                 Again Today.
               </span>
