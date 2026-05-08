@@ -221,13 +221,12 @@ body {
   opacity: 0.72;
   text-transform: uppercase;
   white-space: nowrap;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
+  transform-origin: left top;
   transition:
     color 520ms var(--process-ease),
     opacity 520ms var(--process-ease),
-    transform 640ms var(--process-ease),
-    writing-mode 1ms linear 330ms;
+    transform 640ms var(--process-ease);
 }
 
 .process-card h3 {
@@ -306,18 +305,17 @@ body {
 
 .process-card.is-active .process-card__label {
   opacity: 0.88;
-  writing-mode: horizontal-tb;
   transform: rotate(0);
+  transform-origin: left top;
   transition:
     color 520ms var(--process-ease),
     opacity 520ms var(--process-ease),
-    transform 640ms var(--process-ease),
-    writing-mode 1ms linear;
+    transform 640ms var(--process-ease);
 }
 
 .process-card.is-active h3 {
   max-width: 24rem;
-  font-size: clamp(1.85rem, 3vw, 3.25rem);
+  font-size: clamp(1.85rem, 2.7vw, 3.25rem);
   opacity: 1;
   transform: translateY(0);
 }
@@ -390,8 +388,8 @@ body {
 
   .process-card__label,
   .process-card.is-active .process-card__label {
-    writing-mode: horizontal-tb;
     transform: rotate(0);
+    transform-origin: left top;
     transition:
       color 520ms var(--process-ease),
       opacity 520ms var(--process-ease),
@@ -406,6 +404,32 @@ body {
 
   .process-card.is-active h3 {
     font-size: clamp(2rem, 10vw, 2.65rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .process-accordion {
+    min-height: 380px;
+    gap: 0.75rem;
+  }
+
+  .process-card {
+    min-height: 380px;
+    padding: 1rem;
+  }
+
+  .process-card__icon {
+    height: 2.35rem;
+    width: 2.35rem;
+  }
+
+  .process-card.is-active h3 {
+    font-size: clamp(1.65rem, 3.5vw, 2.45rem);
+  }
+
+  .process-card__copy {
+    font-size: 0.92rem;
+    line-height: 1.65;
   }
 }
 

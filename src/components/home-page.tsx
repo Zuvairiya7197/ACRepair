@@ -332,7 +332,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute left-0 right-0 top-0 z-50 px-4 pt-5 text-[#0f4c45] sm:px-6 lg:px-8">
+    <header className="absolute left-0 right-0 top-0 z-50 px-3 pt-4 text-[#0f4c45] sm:px-6 sm:pt-5 lg:px-8">
       <nav className="relative mx-auto flex h-12 max-w-7xl items-center justify-between">
         <div className="relative flex items-center gap-2">
           <button
@@ -376,7 +376,9 @@ function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e3f5ef]/72 backdrop-blur-md">
             <Snowflake className="h-5 w-5 fill-[#0f4c45]/10 text-[#0f4c45]" />
           </span>
-          <span className="text-xl font-black tracking-normal">AirSwift</span>
+          <span className="text-xl font-black tracking-normal max-[420px]:hidden">
+            AirSwift
+          </span>
         </a>
 
         <div className="flex items-center gap-2">
@@ -389,7 +391,7 @@ function Navbar() {
           </a>
           <a
             href="#book"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#0f4c45] px-5 text-sm font-black text-white shadow-[0_14px_34px_rgba(15,76,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#123f3b]"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#0f4c45] px-4 text-sm font-black text-white shadow-[0_14px_34px_rgba(15,76,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#123f3b] sm:px-5"
           >
             Book a Repair
           </a>
@@ -419,7 +421,7 @@ export default function HomePage() {
       <Navbar />
 
       <main id="home">
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-28 text-[#0f4c45] sm:px-6 lg:px-8">
+        <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-4 py-24 text-[#0f4c45] sm:px-6 sm:py-28 lg:px-8">
           <motion.div
             aria-hidden
             className="absolute inset-0"
@@ -441,7 +443,7 @@ export default function HomePage() {
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="relative mx-auto mt-56 flex w-full max-w-6xl flex-col items-center text-center sm:mt-60 lg:mt-72"
+            className="relative mx-auto mt-44 flex w-full max-w-6xl flex-col items-center text-center sm:mt-56 lg:mt-72"
           >
             <motion.h1
               variants={fadeUp}
@@ -459,17 +461,17 @@ export default function HomePage() {
             </motion.p>
             <motion.div
               variants={fadeUp}
-              className="mt-9 flex w-full max-w-sm flex-col gap-3 sm:flex-row sm:justify-center"
+              className="mt-9 flex w-full max-w-sm flex-col gap-3 min-[420px]:flex-row min-[420px]:justify-center"
             >
               <a
                 href="#book"
-                className="inline-flex h-14 items-center justify-center rounded-full bg-[#0f4c45] px-8 text-sm font-black text-white shadow-[0_18px_48px_rgba(15,76,69,0.22)] transition hover:-translate-y-1 hover:bg-[#123f3b]"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-[#0f4c45] px-6 text-sm font-black text-white shadow-[0_18px_48px_rgba(15,76,69,0.22)] transition hover:-translate-y-1 hover:bg-[#123f3b] sm:px-8"
               >
                 Book a Repair
               </a>
               <a
                 href={`tel:${phone}`}
-                className="inline-flex h-14 items-center justify-center rounded-full border border-[#0f4c45]/12 bg-white/78 px-8 text-sm font-black text-[#0f4c45] shadow-[0_14px_36px_rgba(15,76,69,0.1)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_44px_rgba(15,76,69,0.14)]"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-[#0f4c45]/12 bg-white/78 px-6 text-sm font-black text-[#0f4c45] shadow-[0_14px_36px_rgba(15,76,69,0.1)] backdrop-blur-md transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_44px_rgba(15,76,69,0.14)] sm:px-8"
               >
                 Get Estimate
               </a>
@@ -508,7 +510,7 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.18 }}
-          className="relative px-4 py-24 sm:px-6 lg:px-8"
+          className="relative px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
         >
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel>Expert cooling care</SectionLabel>
@@ -517,7 +519,7 @@ export default function HomePage() {
               className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end"
             >
               <div className="max-w-3xl">
-                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-5xl">
+                <h2 className="max-w-3xl text-3xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-4xl lg:text-5xl">
                   Premium AC services, clearly handled.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-7 text-[#527d78]">
@@ -573,13 +575,13 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-[#0f4c45] px-4 py-24 text-white sm:px-6 lg:px-8"
+          className="bg-[#0f4c45] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24"
         >
           <div className="mx-auto max-w-7xl">
             <SectionLabel>Why choose us</SectionLabel>
             <motion.h2
               variants={fadeUp}
-              className="max-w-3xl text-4xl font-black tracking-normal sm:text-5xl"
+              className="max-w-3xl text-3xl font-black tracking-normal sm:text-4xl lg:text-5xl"
             >
               Premium service standards, without premium-service friction.
             </motion.h2>
@@ -606,7 +608,7 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.22 }}
-          className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
+          className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_28%,rgba(144,226,209,0.3),transparent_20rem),radial-gradient(circle_at_84%_18%,rgba(205,235,255,0.36),transparent_24rem)]" />
           <div className="relative mx-auto max-w-7xl">
@@ -615,7 +617,7 @@ export default function HomePage() {
               variants={fadeUp}
               className="flex flex-col justify-between gap-5 md:flex-row md:items-end"
             >
-              <h2 className="max-w-3xl text-4xl font-black tracking-normal text-[#0f4c45] sm:text-5xl">
+              <h2 className="max-w-3xl text-3xl font-black tracking-normal text-[#0f4c45] sm:text-4xl lg:text-5xl">
                 Five calm steps from warm air to cool comfort.
               </h2>
             </motion.div>
@@ -670,7 +672,7 @@ export default function HomePage() {
 
         <section
           id="reviews"
-          className="relative overflow-x-hidden bg-[#eef8f5] py-24"
+          className="relative overflow-x-hidden bg-[#eef8f5] py-16 sm:py-20 lg:py-24"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(188,235,221,0.78),transparent_25rem),radial-gradient(circle_at_86%_16%,rgba(205,235,255,0.52),transparent_28rem),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(238,248,245,0.78))]" />
           <motion.div
@@ -686,7 +688,7 @@ export default function HomePage() {
               className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"
             >
               <div>
-                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-5xl">
+                <h2 className="max-w-3xl text-3xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-4xl lg:text-5xl">
                   Reviews that feel calm, clear, and earned.
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-7 text-[#527d78]">
@@ -723,7 +725,7 @@ export default function HomePage() {
               {marqueeItems.map((item, index) => (
                 <figure
                   key={`${item.name}-${index}`}
-                  className="group flex min-h-[245px] w-[320px] shrink-0 flex-col rounded-[26px] border border-[#0f4c45]/10 bg-white/82 p-5 shadow-[0_18px_54px_rgba(15,76,69,0.1)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#3f9287]/25 hover:bg-white/92 hover:shadow-[0_28px_76px_rgba(15,76,69,0.15)] sm:w-[390px]"
+                  className="group flex min-h-[245px] w-[min(84vw,390px)] shrink-0 flex-col rounded-[26px] border border-[#0f4c45]/10 bg-white/82 p-5 shadow-[0_18px_54px_rgba(15,76,69,0.1)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#3f9287]/25 hover:bg-white/92 hover:shadow-[0_28px_76px_rgba(15,76,69,0.15)]"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex gap-1 text-[#3f9287]">
@@ -761,7 +763,7 @@ export default function HomePage() {
                         </div>
                       </div>
                     </div>
-                    <div className="shrink-0 rounded-full bg-[#e3f5ef] px-3 py-1 text-xs font-black text-[#3f9287]">
+                    <div className="hidden shrink-0 rounded-full bg-[#e3f5ef] px-3 py-1 text-xs font-black text-[#3f9287] min-[380px]:block">
                       {item.service}
                     </div>
                   </div>
@@ -771,13 +773,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="book" className="px-4 py-24 sm:px-6 lg:px-8">
+        <section id="book" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.24 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#0f4c45] px-6 py-16 text-white shadow-[0_24px_80px_rgba(15,76,69,0.18)] sm:px-10 lg:px-14"
+            className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#0f4c45] px-5 py-12 text-white shadow-[0_24px_80px_rgba(15,76,69,0.18)] sm:px-10 sm:py-16 lg:px-14"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(227,245,239,0.34),transparent_22rem),linear-gradient(135deg,rgba(255,255,255,0.12),transparent)]" />
             <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
@@ -785,7 +787,7 @@ export default function HomePage() {
                 <p className="text-sm font-black uppercase text-[#bcebdd]">
                   Same-day appointments
                 </p>
-                <h2 className="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+                <h2 className="mt-4 text-3xl font-black tracking-normal sm:text-4xl lg:text-5xl">
                   Get Your AC Fixed Today
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-8 text-white/70">
@@ -797,7 +799,7 @@ export default function HomePage() {
                 href={whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="cta-shake inline-flex shrink-0 items-center justify-center gap-3 rounded-[22px] bg-white px-8 py-5 text-base font-black text-[#0f4c45] shadow-[0_20px_60px_rgba(5,35,32,0.2)] transition hover:shadow-[0_26px_72px_rgba(5,35,32,0.24)]"
+                className="cta-shake inline-flex w-full shrink-0 items-center justify-center gap-3 rounded-[22px] bg-white px-8 py-5 text-base font-black text-[#0f4c45] shadow-[0_20px_60px_rgba(5,35,32,0.2)] transition hover:shadow-[0_26px_72px_rgba(5,35,32,0.24)] sm:w-auto"
               >
                 <CalendarCheck className="h-5 w-5" />
                 Book Now
@@ -811,7 +813,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(227,245,239,0.88),transparent_24rem),radial-gradient(circle_at_88%_18%,rgba(234,247,255,0.72),transparent_26rem)]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[1.15fr_1.85fr]">
-            <div className="rounded-[28px] border border-[#0f4c45]/10 bg-[#f6fbf9]/78 p-7 shadow-[0_24px_80px_rgba(15,76,69,0.1)] backdrop-blur-xl">
+            <div className="rounded-[28px] border border-[#0f4c45]/10 bg-[#f6fbf9]/78 p-5 shadow-[0_24px_80px_rgba(15,76,69,0.1)] backdrop-blur-xl sm:p-7">
               <a
                 href="#home"
                 aria-label="AirSwift home"
@@ -829,7 +831,7 @@ export default function HomePage() {
                   </span>
                 </span>
               </a>
-              <h2 className="mt-8 max-w-md text-3xl font-black leading-tight tracking-normal text-[#0f4c45]">
+              <h2 className="mt-8 max-w-md text-2xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-3xl">
                 Your AC repair services for fast, reliable cooling care.
               </h2>
               <p className="mt-4 max-w-md leading-7 text-[#527d78]">
@@ -841,14 +843,14 @@ export default function HomePage() {
                   href={whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f4c45] px-5 py-3 text-sm font-black text-white shadow-[0_18px_44px_rgba(15,76,69,0.18)] transition hover:-translate-y-1"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#0f4c45] px-5 py-3 text-sm font-black text-white shadow-[0_18px_44px_rgba(15,76,69,0.18)] transition hover:-translate-y-1 sm:flex-none"
                 >
                   <CalendarCheck className="h-4 w-4 text-[#bcebdd]" />
                   Book Service
                 </a>
                 <a
                   href={`tel:${phone}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0f4c45]/12 bg-white/82 px-5 py-3 text-sm font-black text-[#0f4c45] shadow-[0_12px_30px_rgba(15,76,69,0.08)] transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_16px_36px_rgba(15,76,69,0.12)]"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-[#0f4c45]/12 bg-white/82 px-5 py-3 text-sm font-black text-[#0f4c45] shadow-[0_12px_30px_rgba(15,76,69,0.08)] transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_16px_36px_rgba(15,76,69,0.12)] sm:flex-none"
                 >
                   <Phone className="h-4 w-4" />
                   Call Now
