@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  background: #f7fbff;
+  background: #f4faf6;
 }
 
 * {
@@ -19,13 +19,13 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 20% 0%, rgba(22, 168, 255, 0.12), transparent 34rem),
-    linear-gradient(180deg, #f8fcff 0%, #ffffff 45%, #eef8ff 100%);
-  color: #06162f;
+    radial-gradient(circle at 18% 0%, rgba(188, 224, 207, 0.36), transparent 34rem),
+    linear-gradient(180deg, #f4faf6 0%, #ffffff 45%, #edf7f1 100%);
+  color: #1f5f53;
 }
 
 ::selection {
-  background: rgba(22, 168, 255, 0.24);
+  background: rgba(95, 154, 143, 0.24);
 }
 
 .glass {
