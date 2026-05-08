@@ -4,14 +4,14 @@
 
 :root {
   color-scheme: light;
-  background: #f4faf6;
-  --process-ink: #174b43;
-  --process-muted: #5f9187;
-  --process-mint: #dff5eb;
-  --process-blue: #e7f4ff;
+  background: #f6fbf9;
+  --process-ink: #123f3b;
+  --process-muted: #557f79;
+  --process-mint: #ddf7ef;
+  --process-blue: #eaf7ff;
   --process-panel: rgba(255, 255, 255, 0.68);
-  --process-border: rgba(31, 95, 83, 0.12);
-  --process-shadow: 0 28px 90px rgba(31, 95, 83, 0.13);
+  --process-border: rgba(15, 76, 69, 0.12);
+  --process-shadow: 0 28px 90px rgba(15, 76, 69, 0.13);
   --process-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -27,13 +27,14 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 18% 0%, rgba(188, 224, 207, 0.36), transparent 34rem),
-    linear-gradient(180deg, #f4faf6 0%, #ffffff 45%, #edf7f1 100%);
-  color: #1f5f53;
+    radial-gradient(circle at 16% 0%, rgba(188, 235, 221, 0.42), transparent 34rem),
+    radial-gradient(circle at 90% 12%, rgba(205, 235, 255, 0.34), transparent 30rem),
+    linear-gradient(180deg, #f6fbf9 0%, #ffffff 45%, #eef8f5 100%);
+  color: #0f4c45;
 }
 
 ::selection {
-  background: rgba(95, 154, 143, 0.24);
+  background: rgba(63, 146, 135, 0.24);
 }
 
 .glass {
@@ -67,7 +68,7 @@ body {
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(239, 250, 246, 0.62)),
     linear-gradient(135deg, var(--process-mint), var(--process-blue));
-  box-shadow: 0 16px 42px rgba(31, 95, 83, 0.07);
+  box-shadow: 0 16px 42px rgba(15, 76, 69, 0.07);
   padding: clamp(1.1rem, 1.7vw, 1.45rem);
   backdrop-filter: blur(24px);
   transform: translateZ(0);
@@ -85,8 +86,8 @@ body {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 24% 18%, rgba(151, 224, 199, 0.55), transparent 18rem),
-    radial-gradient(circle at 86% 12%, rgba(183, 223, 255, 0.55), transparent 18rem);
+    radial-gradient(circle at 24% 18%, rgba(144, 226, 209, 0.55), transparent 18rem),
+    radial-gradient(circle at 86% 12%, rgba(205, 235, 255, 0.55), transparent 18rem);
   content: "";
   opacity: 0.56;
   transition: opacity 520ms var(--process-ease), transform 850ms var(--process-ease);
@@ -104,12 +105,12 @@ body {
 }
 
 .process-card:focus-visible {
-  outline: 3px solid rgba(95, 154, 143, 0.36);
+  outline: 3px solid rgba(63, 146, 135, 0.36);
   outline-offset: 4px;
 }
 
 .process-card.is-active {
-  border-color: rgba(95, 154, 143, 0.26);
+  border-color: rgba(63, 146, 135, 0.26);
   box-shadow: var(--process-shadow);
   transform: translateY(-8px);
 }
@@ -124,11 +125,11 @@ body {
 }
 
 .process-card.is-ready.is-active {
-  border-color: rgba(31, 95, 83, 0.22);
+  border-color: rgba(15, 76, 69, 0.22);
   background:
-    linear-gradient(135deg, rgba(31, 95, 83, 0.95), rgba(68, 158, 145, 0.88) 48%, rgba(174, 220, 255, 0.72)),
-    linear-gradient(135deg, #dff5eb, #e7f4ff);
-  box-shadow: 0 32px 100px rgba(31, 95, 83, 0.24);
+    linear-gradient(135deg, rgba(15, 76, 69, 0.96), rgba(42, 162, 148, 0.88) 48%, rgba(205, 235, 255, 0.72)),
+    linear-gradient(135deg, #ddf7ef, #eaf7ff);
+  box-shadow: 0 32px 100px rgba(15, 76, 69, 0.24);
   color: white;
 }
 
@@ -141,8 +142,8 @@ body {
   inset: -22%;
   z-index: -1;
   background:
-    radial-gradient(circle, rgba(219, 255, 241, 0.42) 0 9%, transparent 26%),
-    conic-gradient(from 120deg, transparent, rgba(196, 238, 255, 0.22), transparent 42%);
+    radial-gradient(circle, rgba(226, 255, 246, 0.42) 0 9%, transparent 26%),
+    conic-gradient(from 120deg, transparent, rgba(210, 244, 255, 0.22), transparent 42%);
   filter: blur(10px);
   opacity: 0;
   animation: process-glow 6.8s linear infinite;
@@ -261,13 +262,13 @@ body {
   color: var(--process-ink);
   font-size: 0.9rem;
   font-weight: 900;
-  box-shadow: 0 18px 42px rgba(8, 44, 38, 0.18);
+  box-shadow: 0 18px 42px rgba(5, 35, 32, 0.18);
 }
 
 .process-card__cta:hover,
 .process-card__cta:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 24px 54px rgba(8, 44, 38, 0.22);
+  box-shadow: 0 24px 54px rgba(5, 35, 32, 0.22);
 }
 
 .process-card__mark {
@@ -276,7 +277,7 @@ body {
   bottom: 1.15rem;
   height: 5.2rem;
   width: 5.2rem;
-  border: 1px solid rgba(31, 95, 83, 0.08);
+  border: 1px solid rgba(15, 76, 69, 0.08);
   border-radius: 32% 68% 54% 46%;
   opacity: 0.28;
   transform: rotate(16deg) scale(0.8);

@@ -318,9 +318,9 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
       variants={fadeUp}
-      className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#1f5f53]/10 bg-[#e5f3ec]/72 px-4 py-2 text-sm font-semibold text-[#1f5f53] shadow-sm backdrop-blur"
+      className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0f4c45]/10 bg-[#e3f5ef]/72 px-4 py-2 text-sm font-semibold text-[#0f4c45] shadow-sm backdrop-blur"
     >
-      <Sparkles className="h-4 w-4 text-[#5f9a8f]" />
+      <Sparkles className="h-4 w-4 text-[#3f9287]" />
       {children}
     </motion.div>
   );
@@ -330,7 +330,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute left-0 right-0 top-0 z-50 px-4 pt-5 text-[#1f5f53] sm:px-6 lg:px-8">
+    <header className="absolute left-0 right-0 top-0 z-50 px-4 pt-5 text-[#0f4c45] sm:px-6 lg:px-8">
       <nav className="relative mx-auto flex h-12 max-w-7xl items-center justify-between">
         <div className="relative flex items-center gap-2">
           <button
@@ -339,7 +339,7 @@ function Navbar() {
             aria-controls="hero-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((open) => !open)}
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e5f3ec]/72 text-[#1f5f53] shadow-sm backdrop-blur-md transition hover:bg-white/82"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e3f5ef]/72 text-[#0f4c45] shadow-sm backdrop-blur-md transition hover:bg-white/82"
           >
             {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -350,14 +350,14 @@ function Navbar() {
               initial={{ opacity: 0, y: -8, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.18, ease: "easeOut" }}
-              className="absolute left-0 top-14 w-52 overflow-hidden rounded-2xl border border-[#1f5f53]/10 bg-[#eff8f3]/88 p-2 shadow-premium backdrop-blur-xl"
+              className="absolute left-0 top-14 w-52 overflow-hidden rounded-2xl border border-[#0f4c45]/10 bg-[#f2fbf8]/88 p-2 shadow-premium backdrop-blur-xl"
             >
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-sm font-black text-[#1f5f53] transition hover:bg-white/78"
+                  className="block rounded-xl px-4 py-3 text-sm font-black text-[#0f4c45] transition hover:bg-white/78"
                 >
                   {item.label}
                 </a>
@@ -368,11 +368,11 @@ function Navbar() {
 
         <a
           href="#home"
-          className="absolute left-1/2 flex -translate-x-1/2 items-center gap-3 text-[#1f5f53]"
+          className="absolute left-1/2 flex -translate-x-1/2 items-center gap-3 text-[#0f4c45]"
           aria-label="AirSwift home"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e5f3ec]/72 backdrop-blur-md">
-            <Snowflake className="h-5 w-5 fill-[#1f5f53]/10 text-[#1f5f53]" />
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e3f5ef]/72 backdrop-blur-md">
+            <Snowflake className="h-5 w-5 fill-[#0f4c45]/10 text-[#0f4c45]" />
           </span>
           <span className="text-xl font-black tracking-normal">AirSwift</span>
         </a>
@@ -380,14 +380,14 @@ function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:${phone}`}
-            className="hidden h-11 items-center gap-2 rounded-full border border-[#1f5f53]/10 bg-[#e5f3ec]/54 px-5 text-sm font-bold text-[#1f5f53] shadow-sm backdrop-blur-md transition hover:bg-white/76 md:flex"
+            className="hidden h-11 items-center gap-2 rounded-full border border-[#0f4c45]/10 bg-[#e3f5ef]/54 px-5 text-sm font-bold text-[#0f4c45] shadow-sm backdrop-blur-md transition hover:bg-white/76 md:flex"
           >
             <Phone className="h-4 w-4" />
             +1 (555) 014-2487
           </a>
           <a
             href="#book"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#e5f3ec]/72 px-5 text-sm font-bold text-[#1f5f53] shadow-sm backdrop-blur-md transition hover:bg-white/88"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#e3f5ef]/72 px-5 text-sm font-bold text-[#0f4c45] shadow-sm backdrop-blur-md transition hover:bg-white/88"
           >
             Book a Repair
           </a>
@@ -411,13 +411,13 @@ export default function HomePage() {
     <>
       <SmoothScroll />
       <motion.div
-        className="fixed left-0 right-0 top-0 z-[60] h-1 origin-left bg-[#1f5f53]"
+        className="fixed left-0 right-0 top-0 z-[60] h-1 origin-left bg-[#0f4c45]"
         style={{ scaleX }}
       />
       <Navbar />
 
       <main id="home">
-        <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-28 text-[#1f5f53] sm:px-6 lg:px-8">
+        <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-28 text-[#0f4c45] sm:px-6 lg:px-8">
           <motion.div
             aria-hidden
             className="absolute inset-0"
@@ -443,13 +443,13 @@ export default function HomePage() {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-balance text-[clamp(2.25rem,4.8vw,4.4rem)] font-black leading-[1.05] tracking-normal text-[#1f5f53]"
+              className="text-balance text-[clamp(2.25rem,4.8vw,4.4rem)] font-black leading-[1.05] tracking-normal text-[#0f4c45]"
             >
               Fast AC Repair — When You Need It Most.
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="mt-7 max-w-xl text-base font-bold leading-7 text-[#4f8d80] sm:text-lg"
+              className="mt-7 max-w-xl text-base font-bold leading-7 text-[#527d78] sm:text-lg"
             >
               Same-day service. Certified technicians.
               <br />
@@ -461,13 +461,13 @@ export default function HomePage() {
             >
               <a
                 href="#book"
-                className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-black text-[#111918] shadow-[0_18px_48px_rgba(31,95,83,0.16)] transition hover:-translate-y-1 hover:bg-white/92"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-sm font-black text-[#0c1514] shadow-[0_18px_48px_rgba(15,76,69,0.16)] transition hover:-translate-y-1 hover:bg-white/92"
               >
                 Book a Repair
               </a>
               <a
                 href={`tel:${phone}`}
-                className="inline-flex h-14 items-center justify-center rounded-full bg-[#e5f3ec]/62 px-8 text-sm font-black text-[#5f9a8f] shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/78"
+                className="inline-flex h-14 items-center justify-center rounded-full bg-[#e3f5ef]/62 px-8 text-sm font-black text-[#3f9287] shadow-sm backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/78"
               >
                 Get Estimate
               </a>
@@ -481,18 +481,18 @@ export default function HomePage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.4 }}
-            className="mx-auto grid max-w-5xl gap-3 rounded-2xl border border-[#1f5f53]/10 bg-white/78 p-3 shadow-[0_24px_80px_rgba(31,95,83,0.14)] backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4"
+            className="mx-auto grid max-w-5xl gap-3 rounded-2xl border border-[#0f4c45]/10 bg-white/78 p-3 shadow-[0_24px_80px_rgba(15,76,69,0.14)] backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4"
           >
             {heroStats.map((stat) => (
               <motion.div
                 key={stat.label}
                 variants={fadeUp}
-                className="rounded-xl bg-[#e5f3ec]/72 px-5 py-5 text-center"
+                className="rounded-xl bg-[#e3f5ef]/72 px-5 py-5 text-center"
               >
-                <div className="text-3xl font-black leading-none text-[#1f5f53]">
+                <div className="text-3xl font-black leading-none text-[#0f4c45]">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                <div className="mt-2 text-xs font-black uppercase tracking-normal text-[#3f9287]">
                   {stat.label}
                 </div>
               </motion.div>
@@ -508,7 +508,7 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.18 }}
           className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(191,229,210,0.58),transparent_24rem),radial-gradient(circle_at_82%_20%,rgba(174,220,255,0.46),transparent_26rem)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(188,235,221,0.58),transparent_24rem),radial-gradient(circle_at_82%_20%,rgba(205,235,255,0.46),transparent_26rem)]" />
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel>Expert cooling care</SectionLabel>
             <motion.div
@@ -516,27 +516,27 @@ export default function HomePage() {
               className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end"
             >
               <div>
-                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#1f5f53] sm:text-5xl">
+                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-5xl">
                   Premium AC services with zero guesswork.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-[#4f8d80]">
+                <p className="mt-5 max-w-2xl text-base leading-7 text-[#527d78]">
                   From urgent repairs to seasonal care, every visit includes a
                   clear diagnosis, upfront pricing, clean workmanship, and final
                   cooling performance checks.
                 </p>
               </div>
 
-              <div className="relative overflow-hidden rounded-[28px] border border-[#1f5f53]/10 bg-white/70 p-5 shadow-[0_26px_80px_rgba(31,95,83,0.12)] backdrop-blur-xl">
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(229,243,236,0.74),rgba(231,244,255,0.62))]" />
+              <div className="relative overflow-hidden rounded-[28px] border border-[#0f4c45]/10 bg-white/70 p-5 shadow-[0_26px_80px_rgba(15,76,69,0.12)] backdrop-blur-xl">
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(227,245,239,0.74),rgba(234,247,255,0.62))]" />
                 <div className="relative flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#1f5f53] text-white shadow-[0_18px_44px_rgba(31,95,83,0.2)]">
-                    <ThermometerSnowflake className="h-6 w-6 text-[#bfe5d2]" />
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#0f4c45] text-white shadow-[0_18px_44px_rgba(15,76,69,0.2)]">
+                    <ThermometerSnowflake className="h-6 w-6 text-[#bcebdd]" />
                   </div>
                   <div>
-                    <p className="text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                    <p className="text-xs font-black uppercase tracking-normal text-[#3f9287]">
                       Same-day cooling audit
                     </p>
-                    <h3 className="mt-2 text-xl font-black text-[#1f5f53]">
+                    <h3 className="mt-2 text-xl font-black text-[#0f4c45]">
                       We inspect, repair, test, and explain before we leave.
                     </h3>
                   </div>
@@ -546,9 +546,9 @@ export default function HomePage() {
                     (item) => (
                       <div
                         key={item}
-                        className="rounded-2xl bg-white/72 px-4 py-3 text-sm font-black text-[#1f5f53] shadow-sm"
+                        className="rounded-2xl bg-white/72 px-4 py-3 text-sm font-black text-[#0f4c45] shadow-sm"
                       >
-                        <CheckCircle2 className="mb-2 h-4 w-4 text-[#5f9a8f]" />
+                        <CheckCircle2 className="mb-2 h-4 w-4 text-[#3f9287]" />
                         {item}
                       </div>
                     ),
@@ -563,29 +563,29 @@ export default function HomePage() {
                   key={title}
                   variants={fadeUp}
                   whileHover={{ y: -10, scale: 1.015 }}
-                  className="group relative min-h-[310px] overflow-hidden rounded-[28px] border border-[#1f5f53]/10 bg-white/72 p-6 shadow-[0_18px_58px_rgba(31,95,83,0.08)] backdrop-blur-xl transition hover:border-[#5f9a8f]/28 hover:shadow-[0_30px_90px_rgba(31,95,83,0.16)]"
+                  className="group relative min-h-[310px] overflow-hidden rounded-[28px] border border-[#0f4c45]/10 bg-white/72 p-6 shadow-[0_18px_58px_rgba(15,76,69,0.08)] backdrop-blur-xl transition hover:border-[#3f9287]/28 hover:shadow-[0_30px_90px_rgba(15,76,69,0.16)]"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(191,229,210,0.7),transparent_15rem),linear-gradient(145deg,rgba(255,255,255,0.74),rgba(231,244,255,0.3))] opacity-80 transition duration-500 group-hover:opacity-100" />
-                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-[#1f5f53]/10 bg-white/32 transition duration-500 group-hover:scale-125" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(188,235,221,0.7),transparent_15rem),linear-gradient(145deg,rgba(255,255,255,0.74),rgba(234,247,255,0.3))] opacity-80 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-[#0f4c45]/10 bg-white/32 transition duration-500 group-hover:scale-125" />
                   <div className="relative flex items-start justify-between gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e5f3ec] text-[#1f5f53] shadow-sm transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#1f5f53] group-hover:text-white group-hover:shadow-[0_18px_44px_rgba(31,95,83,0.18)]">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e3f5ef] text-[#0f4c45] shadow-sm transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#0f4c45] group-hover:text-white group-hover:shadow-[0_18px_44px_rgba(15,76,69,0.18)]">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <span className="rounded-full border border-[#1f5f53]/10 bg-white/68 px-3 py-1 text-xs font-black text-[#5f9a8f]">
+                    <span className="rounded-full border border-[#0f4c45]/10 bg-white/68 px-3 py-1 text-xs font-black text-[#3f9287]">
                       0{index + 1}
                     </span>
                   </div>
                   <div className="relative mt-8">
-                    <p className="text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                    <p className="text-xs font-black uppercase tracking-normal text-[#3f9287]">
                       {tag}
                     </p>
-                    <h3 className="mt-3 text-2xl font-black tracking-normal text-[#1f5f53]">
+                    <h3 className="mt-3 text-2xl font-black tracking-normal text-[#0f4c45]">
                       {title}
                     </h3>
-                    <p className="mt-4 leading-7 text-[#4f8d80]">{copy}</p>
+                    <p className="mt-4 leading-7 text-[#527d78]">{copy}</p>
                   </div>
-                  <div className="relative mt-7 flex items-center gap-3 border-t border-[#1f5f53]/10 pt-5 text-sm font-black text-[#1f5f53]">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#5f9a8f]" />
+                  <div className="relative mt-7 flex items-center gap-3 border-t border-[#0f4c45]/10 pt-5 text-sm font-black text-[#0f4c45]">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#3f9287]" />
                     {detail}
                   </div>
                 </motion.article>
@@ -600,7 +600,7 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-[#1f5f53] px-4 py-24 text-white sm:px-6 lg:px-8"
+          className="bg-[#0f4c45] px-4 py-24 text-white sm:px-6 lg:px-8"
         >
           <div className="mx-auto max-w-7xl">
             <SectionLabel>Why choose us</SectionLabel>
@@ -616,9 +616,9 @@ export default function HomePage() {
                   key={title}
                   variants={fadeUp}
                   whileHover={{ y: -7 }}
-                  className="rounded-2xl border border-white/12 bg-[#e5f3ec]/10 p-6 shadow-[0_24px_80px_rgba(8,44,38,0.18)] backdrop-blur"
+                  className="rounded-2xl border border-white/12 bg-[#e3f5ef]/10 p-6 shadow-[0_24px_80px_rgba(5,35,32,0.18)] backdrop-blur"
                 >
-                  <Icon className="h-8 w-8 text-[#bfe5d2]" />
+                  <Icon className="h-8 w-8 text-[#bcebdd]" />
                   <h3 className="mt-6 text-lg font-black">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-white/72">{copy}</p>
                 </motion.div>
@@ -635,17 +635,17 @@ export default function HomePage() {
           viewport={{ once: true, amount: 0.22 }}
           className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_28%,rgba(151,224,199,0.3),transparent_20rem),radial-gradient(circle_at_84%_18%,rgba(174,220,255,0.36),transparent_24rem)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_28%,rgba(144,226,209,0.3),transparent_20rem),radial-gradient(circle_at_84%_18%,rgba(205,235,255,0.36),transparent_24rem)]" />
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel>Simple process</SectionLabel>
             <motion.div
               variants={fadeUp}
               className="flex flex-col justify-between gap-5 md:flex-row md:items-end"
             >
-              <h2 className="max-w-3xl text-4xl font-black tracking-normal text-[#1f5f53] sm:text-5xl">
+              <h2 className="max-w-3xl text-4xl font-black tracking-normal text-[#0f4c45] sm:text-5xl">
                 Five calm steps from warm air to cool comfort.
               </h2>
-              <p className="max-w-md text-base leading-7 text-[#4f8d80]">
+              <p className="max-w-md text-base leading-7 text-[#527d78]">
                 Tap or hover through the service flow. Each step stays simple,
                 secure, and built around your schedule.
               </p>
@@ -701,9 +701,9 @@ export default function HomePage() {
 
         <section
           id="reviews"
-          className="relative overflow-hidden bg-[#edf7f1] py-24"
+          className="relative overflow-hidden bg-[#eef8f5] py-24"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(191,229,210,0.78),transparent_25rem),radial-gradient(circle_at_86%_16%,rgba(174,220,255,0.52),transparent_28rem),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(237,247,241,0.78))]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(188,235,221,0.78),transparent_25rem),radial-gradient(circle_at_86%_16%,rgba(205,235,255,0.52),transparent_28rem),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(238,248,245,0.78))]" />
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -717,14 +717,14 @@ export default function HomePage() {
               className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"
             >
               <div>
-                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#1f5f53] sm:text-5xl">
+                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#0f4c45] sm:text-5xl">
                   Reviews that feel calm, clear, and earned.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-7 text-[#4f8d80]">
+                <p className="mt-5 max-w-2xl text-base leading-7 text-[#527d78]">
                   Real visits, clear pricing, tidy repairs, and cool rooms.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-3 rounded-[28px] border border-[#1f5f53]/10 bg-white/72 p-3 shadow-[0_24px_70px_rgba(31,95,83,0.1)] backdrop-blur-xl">
+              <div className="grid grid-cols-3 gap-3 rounded-[28px] border border-[#0f4c45]/10 bg-white/72 p-3 shadow-[0_24px_70px_rgba(15,76,69,0.1)] backdrop-blur-xl">
                 {[
                   ["4.9", "Rating"],
                   ["18k+", "Repairs"],
@@ -732,12 +732,12 @@ export default function HomePage() {
                 ].map(([value, label]) => (
                   <div
                     key={label}
-                    className="rounded-2xl bg-[#e5f3ec]/72 px-4 py-3 text-center"
+                    className="rounded-2xl bg-[#e3f5ef]/72 px-4 py-3 text-center"
                   >
-                    <div className="text-xl font-black text-[#1f5f53]">
+                    <div className="text-xl font-black text-[#0f4c45]">
                       {value}
                     </div>
-                    <div className="mt-1 text-[0.68rem] font-black uppercase tracking-normal text-[#5f9a8f]">
+                    <div className="mt-1 text-[0.68rem] font-black uppercase tracking-normal text-[#3f9287]">
                       {label}
                     </div>
                   </div>
@@ -754,14 +754,14 @@ export default function HomePage() {
               {marqueeItems.map((item, index) => (
                 <figure
                   key={`${item.name}-${index}`}
-                  className="group relative min-h-[270px] w-[320px] shrink-0 overflow-hidden rounded-[28px] border border-[#1f5f53]/10 bg-white/74 p-5 shadow-[0_22px_70px_rgba(31,95,83,0.11)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#5f9a8f]/30 hover:shadow-[0_34px_100px_rgba(31,95,83,0.18)] sm:w-[410px]"
+                  className="group relative min-h-[270px] w-[320px] shrink-0 overflow-hidden rounded-[28px] border border-[#0f4c45]/10 bg-white/74 p-5 shadow-[0_22px_70px_rgba(15,76,69,0.11)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#3f9287]/30 hover:shadow-[0_34px_100px_rgba(15,76,69,0.18)] sm:w-[410px]"
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(191,229,210,0.72),transparent_16rem),linear-gradient(145deg,rgba(255,255,255,0.82),rgba(231,244,255,0.34))] opacity-90 transition duration-500 group-hover:opacity-100" />
-                  <div className="absolute -right-8 -top-10 text-[9rem] font-black leading-none text-[#1f5f53]/[0.045]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(188,235,221,0.72),transparent_16rem),linear-gradient(145deg,rgba(255,255,255,0.82),rgba(234,247,255,0.34))] opacity-90 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute -right-8 -top-10 text-[9rem] font-black leading-none text-[#0f4c45]/[0.045]">
                     ”
                   </div>
                   <div className="relative flex items-start justify-between gap-4">
-                    <div className="flex gap-1 text-[#5f9a8f]">
+                    <div className="flex gap-1 text-[#3f9287]">
                       {Array.from({ length: 5 }).map((_, starIndex) => (
                         <Star
                           key={starIndex}
@@ -769,18 +769,18 @@ export default function HomePage() {
                         />
                       ))}
                     </div>
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1f5f53]/10 bg-white/76 px-3 py-1 text-xs font-black text-[#1f5f53]">
-                      <BadgeCheck className="h-3.5 w-3.5 text-[#5f9a8f]" />
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0f4c45]/10 bg-white/76 px-3 py-1 text-xs font-black text-[#0f4c45]">
+                      <BadgeCheck className="h-3.5 w-3.5 text-[#3f9287]" />
                       Verified
                     </span>
                   </div>
-                  <blockquote className="relative mt-6 min-h-20 text-lg font-black leading-7 tracking-normal text-[#1f5f53] sm:text-xl sm:leading-8">
+                  <blockquote className="relative mt-6 min-h-20 text-lg font-black leading-7 tracking-normal text-[#0f4c45] sm:text-xl sm:leading-8">
                     “{item.review}”
                   </blockquote>
-                  <div className="relative mt-6 rounded-[22px] border border-[#1f5f53]/10 bg-white/68 p-3 shadow-sm">
+                  <div className="relative mt-6 rounded-[22px] border border-[#0f4c45]/10 bg-white/68 p-3 shadow-sm">
                     <div className="flex items-center gap-4">
                       <div className="relative">
-                        <div className="absolute inset-0 rounded-2xl bg-[#5f9a8f]/22 blur-md" />
+                        <div className="absolute inset-0 rounded-2xl bg-[#3f9287]/22 blur-md" />
                         <Image
                           src={item.avatar}
                           alt={`${item.name} customer portrait`}
@@ -791,15 +791,15 @@ export default function HomePage() {
                         />
                       </div>
                       <div className="min-w-0">
-                        <figcaption className="font-black text-[#1f5f53]">
+                        <figcaption className="font-black text-[#0f4c45]">
                           {item.name}
                         </figcaption>
-                        <div className="text-sm font-bold text-[#4f8d80]">
+                        <div className="text-sm font-bold text-[#527d78]">
                           {item.role}
                         </div>
                       </div>
                     </div>
-                    <div className="mt-3 text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                    <div className="mt-3 text-xs font-black uppercase tracking-normal text-[#3f9287]">
                       {item.service}
                     </div>
                   </div>
@@ -815,12 +815,12 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.24 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#1f5f53] px-6 py-16 text-white shadow-[0_24px_80px_rgba(31,95,83,0.18)] sm:px-10 lg:px-14"
+            className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#0f4c45] px-6 py-16 text-white shadow-[0_24px_80px_rgba(15,76,69,0.18)] sm:px-10 lg:px-14"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(229,243,236,0.34),transparent_22rem),linear-gradient(135deg,rgba(255,255,255,0.12),transparent)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(227,245,239,0.34),transparent_22rem),linear-gradient(135deg,rgba(255,255,255,0.12),transparent)]" />
             <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
               <div>
-                <p className="text-sm font-black uppercase text-[#bfe5d2]">
+                <p className="text-sm font-black uppercase text-[#bcebdd]">
                   Same-day appointments
                 </p>
                 <h2 className="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
@@ -835,7 +835,7 @@ export default function HomePage() {
                 href={whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex shrink-0 items-center justify-center gap-3 rounded-2xl bg-white px-8 py-5 text-base font-black text-[#1f5f53] shadow-[0_20px_60px_rgba(8,44,38,0.18)] transition hover:-translate-y-1 hover:bg-[#f4faf6]"
+                className="inline-flex shrink-0 items-center justify-center gap-3 rounded-2xl bg-white px-8 py-5 text-base font-black text-[#0f4c45] shadow-[0_20px_60px_rgba(5,35,32,0.18)] transition hover:-translate-y-1 hover:bg-[#f6fbf9]"
               >
                 <CalendarCheck className="h-5 w-5" />
                 Book Now
@@ -846,31 +846,31 @@ export default function HomePage() {
       </main>
 
       <footer className="relative overflow-hidden bg-white px-4 pb-28 pt-16 sm:px-6 md:pb-10 lg:px-8">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(229,243,236,0.88),transparent_24rem),radial-gradient(circle_at_88%_18%,rgba(231,244,255,0.72),transparent_26rem)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(227,245,239,0.88),transparent_24rem),radial-gradient(circle_at_88%_18%,rgba(234,247,255,0.72),transparent_26rem)]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[1.15fr_1.85fr]">
-            <div className="rounded-[28px] border border-[#1f5f53]/10 bg-[#f6fbf8]/78 p-7 shadow-[0_24px_80px_rgba(31,95,83,0.1)] backdrop-blur-xl">
+            <div className="rounded-[28px] border border-[#0f4c45]/10 bg-[#f6fbf9]/78 p-7 shadow-[0_24px_80px_rgba(15,76,69,0.1)] backdrop-blur-xl">
               <a
                 href="#home"
                 aria-label="AirSwift home"
                 className="inline-flex items-center gap-3"
               >
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1f5f53] text-white shadow-[0_16px_44px_rgba(31,95,83,0.18)]">
-                  <Snowflake className="h-7 w-7 fill-[#bfe5d2]/20 text-[#bfe5d2]" />
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0f4c45] text-white shadow-[0_16px_44px_rgba(15,76,69,0.18)]">
+                  <Snowflake className="h-7 w-7 fill-[#bcebdd]/20 text-[#bcebdd]" />
                 </span>
                 <span>
-                  <span className="block text-2xl font-black tracking-normal text-[#1f5f53]">
+                  <span className="block text-2xl font-black tracking-normal text-[#0f4c45]">
                     AirSwift
                   </span>
-                  <span className="mt-1 block text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                  <span className="mt-1 block text-xs font-black uppercase tracking-normal text-[#3f9287]">
                     AC Repair Services
                   </span>
                 </span>
               </a>
-              <h2 className="mt-8 max-w-md text-3xl font-black leading-tight tracking-normal text-[#1f5f53]">
+              <h2 className="mt-8 max-w-md text-3xl font-black leading-tight tracking-normal text-[#0f4c45]">
                 Your AC repair services for fast, reliable cooling care.
               </h2>
-              <p className="mt-4 max-w-md leading-7 text-[#4f8d80]">
+              <p className="mt-4 max-w-md leading-7 text-[#527d78]">
                 Premium AC repair, installation, gas refill, maintenance, and
                 annual care for homes, rentals, offices, and retail spaces.
               </p>
@@ -879,14 +879,14 @@ export default function HomePage() {
                   href={whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1f5f53] px-5 py-3 text-sm font-black text-white shadow-[0_18px_44px_rgba(31,95,83,0.18)] transition hover:-translate-y-1"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f4c45] px-5 py-3 text-sm font-black text-white shadow-[0_18px_44px_rgba(15,76,69,0.18)] transition hover:-translate-y-1"
                 >
-                  <CalendarCheck className="h-4 w-4 text-[#bfe5d2]" />
+                  <CalendarCheck className="h-4 w-4 text-[#bcebdd]" />
                   Book Service
                 </a>
                 <a
                   href={`tel:${phone}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1f5f53] shadow-sm transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(31,95,83,0.12)]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#0f4c45] shadow-sm transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,76,69,0.12)]"
                 >
                   <Phone className="h-4 w-4" />
                   Call Now
@@ -895,26 +895,26 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-[24px] border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
-                <h3 className="text-sm font-black uppercase tracking-normal text-[#1f5f53]">
+              <div className="rounded-[24px] border border-[#0f4c45]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-sm font-black uppercase tracking-normal text-[#0f4c45]">
                   Services
                 </h3>
                 <div className="mt-5 grid gap-3">
                   {footerServices.map((service) => (
                     <a
                       key={service}
-                      className="group flex items-center gap-3 text-sm font-bold text-[#4f8d80] transition hover:text-[#1f5f53]"
+                      className="group flex items-center gap-3 text-sm font-bold text-[#527d78] transition hover:text-[#0f4c45]"
                       href="#services"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#9ccfc0] transition group-hover:scale-125 group-hover:bg-[#1f5f53]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#8cd9ca] transition group-hover:scale-125 group-hover:bg-[#0f4c45]" />
                       {service}
                     </a>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-[24px] border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
-                <h3 className="text-sm font-black uppercase tracking-normal text-[#1f5f53]">
+              <div className="rounded-[24px] border border-[#0f4c45]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-sm font-black uppercase tracking-normal text-[#0f4c45]">
                   Contact
                 </h3>
                 <div className="mt-5 grid gap-4">
@@ -922,9 +922,9 @@ export default function HomePage() {
                     <a
                       key={label}
                       href={href}
-                      className="group flex items-start gap-3 text-sm font-bold leading-6 text-[#4f8d80] transition hover:text-[#1f5f53]"
+                      className="group flex items-start gap-3 text-sm font-bold leading-6 text-[#527d78] transition hover:text-[#0f4c45]"
                     >
-                      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e5f3ec] text-[#1f5f53] transition group-hover:-translate-y-0.5 group-hover:bg-[#1f5f53] group-hover:text-white">
+                      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e3f5ef] text-[#0f4c45] transition group-hover:-translate-y-0.5 group-hover:bg-[#0f4c45] group-hover:text-white">
                         <Icon className="h-4 w-4" />
                       </span>
                       <span>{label}</span>
@@ -933,11 +933,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="rounded-[24px] border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
-                <h3 className="text-sm font-black uppercase tracking-normal text-[#1f5f53]">
+              <div className="rounded-[24px] border border-[#0f4c45]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-sm font-black uppercase tracking-normal text-[#0f4c45]">
                   Social
                 </h3>
-                <p className="mt-5 text-sm font-semibold leading-6 text-[#4f8d80]">
+                <p className="mt-5 text-sm font-semibold leading-6 text-[#527d78]">
                   Follow updates, seasonal AC care tips, and service offers.
                 </p>
                 <div className="mt-5 flex gap-3">
@@ -946,7 +946,7 @@ export default function HomePage() {
                       key={label}
                       href={href}
                       aria-label={`Follow AirSwift on ${label}`}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#1f5f53]/10 bg-[#e5f3ec] text-[#1f5f53] shadow-sm transition hover:-translate-y-1 hover:bg-[#1f5f53] hover:text-white hover:shadow-[0_16px_36px_rgba(31,95,83,0.16)]"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#0f4c45]/10 bg-[#e3f5ef] text-[#0f4c45] shadow-sm transition hover:-translate-y-1 hover:bg-[#0f4c45] hover:text-white hover:shadow-[0_16px_36px_rgba(15,76,69,0.16)]"
                     >
                       <Icon className="h-4 w-4" />
                     </a>
@@ -954,7 +954,7 @@ export default function HomePage() {
                 </div>
                 <a
                   href="#home"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-black text-[#1f5f53] transition hover:text-[#5f9a8f]"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-black text-[#0f4c45] transition hover:text-[#3f9287]"
                 >
                   <Globe className="h-4 w-4" />
                   airswift.example
@@ -963,16 +963,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col justify-between gap-3 border-t border-[#1f5f53]/10 pt-6 text-sm font-semibold text-[#5f9a8f] md:flex-row md:items-center">
+          <div className="mt-8 flex flex-col justify-between gap-3 border-t border-[#0f4c45]/10 pt-6 text-sm font-semibold text-[#3f9287] md:flex-row md:items-center">
             <p>© 2026 AirSwift AC Repair Services. All rights reserved.</p>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
-              <a href="#services" className="transition hover:text-[#1f5f53]">
+              <a href="#services" className="transition hover:text-[#0f4c45]">
                 Services
               </a>
-              <a href="#process" className="transition hover:text-[#1f5f53]">
+              <a href="#process" className="transition hover:text-[#0f4c45]">
                 Process
               </a>
-              <a href="#book" className="transition hover:text-[#1f5f53]">
+              <a href="#book" className="transition hover:text-[#0f4c45]">
                 Book
               </a>
             </div>
@@ -986,32 +986,32 @@ export default function HomePage() {
           target="_blank"
           rel="noreferrer"
           aria-label="Book on WhatsApp"
-          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#5f9a8f] text-white shadow-[0_20px_60px_rgba(31,95,83,0.18)] transition hover:-translate-y-1"
+          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3f9287] text-white shadow-[0_20px_60px_rgba(15,76,69,0.18)] transition hover:-translate-y-1"
         >
           <Headphones className="h-6 w-6" />
         </a>
         <a
           href={`tel:${phone}`}
           aria-label="Call AirSwift"
-          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1f5f53] text-white shadow-[0_20px_60px_rgba(31,95,83,0.18)] transition hover:-translate-y-1"
+          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0f4c45] text-white shadow-[0_20px_60px_rgba(15,76,69,0.18)] transition hover:-translate-y-1"
         >
-          <Phone className="h-6 w-6 text-[#bfe5d2]" />
+          <Phone className="h-6 w-6 text-[#bcebdd]" />
         </a>
       </div>
 
-      <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-3 rounded-2xl border border-[#1f5f53]/10 bg-white/88 p-3 shadow-[0_24px_80px_rgba(31,95,83,0.14)] backdrop-blur md:hidden">
+      <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-3 rounded-2xl border border-[#0f4c45]/10 bg-white/88 p-3 shadow-[0_24px_80px_rgba(15,76,69,0.14)] backdrop-blur md:hidden">
         <a
           href={`tel:${phone}`}
-          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#1f5f53] px-4 py-3 text-sm font-black text-white"
+          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0f4c45] px-4 py-3 text-sm font-black text-white"
         >
-          <Phone className="h-4 w-4 text-[#bfe5d2]" />
+          <Phone className="h-4 w-4 text-[#bcebdd]" />
           Call Now
         </a>
         <a
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#e5f3ec] px-4 py-3 text-sm font-black text-[#1f5f53]"
+          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#e3f5ef] px-4 py-3 text-sm font-black text-[#0f4c45]"
         >
           Book Now
           <ChevronRight className="h-4 w-4" />
