@@ -40,6 +40,30 @@ body {
   text-wrap: balance;
 }
 
+.cta-shake:hover,
+.cta-shake:focus-visible {
+  animation: cta-shake 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cta-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  22% {
+    transform: translateX(-4px);
+  }
+  44% {
+    transform: translateX(4px);
+  }
+  66% {
+    transform: translateX(-2px);
+  }
+  82% {
+    transform: translateX(2px);
+  }
+}
+
 .process-accordion {
   display: flex;
   min-height: 430px;

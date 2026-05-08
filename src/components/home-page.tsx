@@ -382,7 +382,7 @@ function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:${phone}`}
-            className="hidden h-11 items-center gap-2 rounded-full border border-[#0f4c45]/10 bg-[#e3f5ef]/54 px-5 text-sm font-bold text-[#0f4c45] shadow-sm backdrop-blur-md transition hover:bg-white/76 md:flex"
+            className="hidden h-11 items-center gap-2 rounded-full border border-[#0f4c45]/12 bg-white/78 px-5 text-sm font-bold text-[#0f4c45] shadow-[0_10px_26px_rgba(15,76,69,0.08)] backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white md:flex"
           >
             <Phone className="h-4 w-4" />
             +1 (555) 014-2487
@@ -797,7 +797,7 @@ export default function HomePage() {
                 href={whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex shrink-0 items-center justify-center gap-3 rounded-2xl bg-white px-8 py-5 text-base font-black text-[#0f4c45] shadow-[0_20px_60px_rgba(5,35,32,0.18)] transition hover:-translate-y-1 hover:bg-[#f6fbf9]"
+                className="cta-shake inline-flex shrink-0 items-center justify-center gap-3 rounded-[22px] bg-white px-8 py-5 text-base font-black text-[#0f4c45] shadow-[0_20px_60px_rgba(5,35,32,0.2)] transition hover:shadow-[0_26px_72px_rgba(5,35,32,0.24)]"
               >
                 <CalendarCheck className="h-5 w-5" />
                 Book Now
@@ -848,7 +848,7 @@ export default function HomePage() {
                 </a>
                 <a
                   href={`tel:${phone}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#0f4c45] shadow-sm transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,76,69,0.12)]"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0f4c45]/12 bg-white/82 px-5 py-3 text-sm font-black text-[#0f4c45] shadow-[0_12px_30px_rgba(15,76,69,0.08)] transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_16px_36px_rgba(15,76,69,0.12)]"
                 >
                   <Phone className="h-4 w-4" />
                   Call Now
@@ -948,7 +948,7 @@ export default function HomePage() {
           target="_blank"
           rel="noreferrer"
           aria-label="Book on WhatsApp"
-          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#3f9287] text-white shadow-[0_20px_60px_rgba(15,76,69,0.18)] transition hover:-translate-y-1"
+          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#25d366] text-white shadow-[0_20px_60px_rgba(37,211,102,0.28)] transition hover:-translate-y-1 hover:bg-[#1fbd5c]"
         >
           <WhatsAppIcon className="h-6 w-6" />
         </a>
@@ -973,10 +973,10 @@ export default function HomePage() {
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#e3f5ef] px-4 py-3 text-sm font-black text-[#0f4c45]"
+          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#25d366] px-4 py-3 text-sm font-black text-white shadow-[0_14px_34px_rgba(37,211,102,0.22)]"
         >
           Book Now
-          <ChevronRight className="h-4 w-4" />
+          <WhatsAppIcon className="h-4 w-4" />
         </a>
       </div>
     </>
