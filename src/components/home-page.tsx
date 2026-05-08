@@ -466,9 +466,15 @@ export default function HomePage() {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-balance text-[clamp(2.25rem,4.8vw,4.4rem)] font-black leading-[1.05] tracking-normal text-[#0f4c45]"
+              className="text-[clamp(1.95rem,8.4vw,2.55rem)] font-black leading-[1.08] tracking-normal text-[#0f4c45] sm:text-balance sm:text-[clamp(2.25rem,4.8vw,4.4rem)] sm:leading-[1.05]"
             >
-              Get Your AC Cooling Again Today.
+              <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
+                Get Your AC Cooling
+              </span>
+              <br className="sm:hidden" />
+              <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
+                Again Today.
+              </span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
