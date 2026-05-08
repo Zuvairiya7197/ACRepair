@@ -160,7 +160,12 @@ function InstagramIcon({ className }: { className?: string }) {
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+    >
       <path d="M14 8.2V6.5c0-.9.6-1.1 1-1.1h2.4V2h-3.3C10.8 2 10 4.5 10 6.1v2.1H7.7V12H10v10h4V12h3l.4-3.8H14Z" />
     </svg>
   );
@@ -168,7 +173,12 @@ function FacebookIcon({ className }: { className?: string }) {
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+    >
       <path d="M6.9 8.9H3.2V21h3.7V8.9ZM5.1 3C3.9 3 3 3.8 3 4.9s.9 1.9 2.1 1.9 2.1-.8 2.1-1.9S6.3 3 5.1 3Zm8 5.9H9.6V21h3.7v-6.4c0-1.7.8-2.7 2.1-2.7 1.2 0 1.8.8 1.8 2.7V21H21v-6.9c0-3.5-1.8-5.5-4.5-5.5-1.6 0-2.8.8-3.4 1.7V8.9Z" />
     </svg>
   );
@@ -176,7 +186,12 @@ function LinkedinIcon({ className }: { className?: string }) {
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="currentColor"
+    >
       <path d="M12.1 2C6.6 2 2.2 6.4 2.2 11.8c0 1.8.5 3.5 1.4 5L2 22l5.4-1.4c1.4.8 3 1.2 4.7 1.2 5.4 0 9.8-4.4 9.8-9.8S17.5 2 12.1 2Zm0 17.9c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3.2.8.9-3.1-.2-.3c-.8-1.2-1.2-2.7-1.2-4.2 0-4.4 3.6-8 8.1-8 4.4 0 8 3.6 8 8.1s-3.6 8-8 8Zm4.5-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3Z" />
     </svg>
   );
@@ -343,7 +358,11 @@ function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e3f5ef]/72 text-[#0f4c45] shadow-sm backdrop-blur-md transition hover:bg-white/82"
           >
-            {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            {menuOpen ? (
+              <X className="h-4 w-4" />
+            ) : (
+              <Menu className="h-4 w-4" />
+            )}
           </button>
 
           {menuOpen && (
@@ -443,7 +462,7 @@ export default function HomePage() {
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="relative mx-auto mt-60 flex w-full max-w-6xl flex-col items-center text-center sm:mt-64 lg:mt-80"
+            className="relative mx-auto mt-72 flex w-full max-w-6xl flex-col items-center text-center sm:mt-64 lg:mt-80"
           >
             <motion.h1
               variants={fadeUp}
@@ -626,51 +645,53 @@ export default function HomePage() {
               className="process-accordion mt-12"
               onMouseLeave={() => setActiveStep(4)}
             >
-              {steps.map(({ icon: Icon, number, label, title, copy, cta }, index) => {
-                const isActive = activeStep === index;
-                const isReady = index === steps.length - 1;
+              {steps.map(
+                ({ icon: Icon, number, label, title, copy, cta }, index) => {
+                  const isActive = activeStep === index;
+                  const isReady = index === steps.length - 1;
 
-                return (
-                  <motion.article
-                    key={label}
-                    variants={fadeUp}
-                    tabIndex={0}
-                    aria-expanded={isActive}
-                    onMouseEnter={() => setActiveStep(index)}
-                    onFocus={() => setActiveStep(index)}
-                    onClick={() => setActiveStep(index)}
-                    className={`process-card ${isActive ? "is-active" : ""} ${
-                      isReady ? "is-ready" : ""
-                    }`}
-                    style={{ flexGrow: isActive ? 6 : 1 }}
-                  >
-                    <div className="process-card__ambient" aria-hidden />
-                    <div className="process-card__top">
-                      <span className="process-card__number">
-                        {number}
-                        <span className="process-card__mobile-label">
-                          {label}
+                  return (
+                    <motion.article
+                      key={label}
+                      variants={fadeUp}
+                      tabIndex={0}
+                      aria-expanded={isActive}
+                      onMouseEnter={() => setActiveStep(index)}
+                      onFocus={() => setActiveStep(index)}
+                      onClick={() => setActiveStep(index)}
+                      className={`process-card ${isActive ? "is-active" : ""} ${
+                        isReady ? "is-ready" : ""
+                      }`}
+                      style={{ flexGrow: isActive ? 6 : 1 }}
+                    >
+                      <div className="process-card__ambient" aria-hidden />
+                      <div className="process-card__top">
+                        <span className="process-card__number">
+                          {number}
+                          <span className="process-card__mobile-label">
+                            {label}
+                          </span>
                         </span>
-                      </span>
-                      <span className="process-card__icon">
-                        <Icon className="h-5 w-5" />
-                      </span>
-                    </div>
-                    <div className="process-card__body">
-                      <p className="process-card__label">{label}</p>
-                      <h3>{title}</h3>
-                      <p className="process-card__copy">{copy}</p>
-                      {cta && (
-                        <a href="#book" className="process-card__cta">
-                          {cta}
-                          <ChevronRight className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                    <div className="process-card__mark" aria-hidden />
-                  </motion.article>
-                );
-              })}
+                        <span className="process-card__icon">
+                          <Icon className="h-5 w-5" />
+                        </span>
+                      </div>
+                      <div className="process-card__body">
+                        <p className="process-card__label">{label}</p>
+                        <h3>{title}</h3>
+                        <p className="process-card__copy">{copy}</p>
+                        {cta && (
+                          <a href="#book" className="process-card__cta">
+                            {cta}
+                            <ChevronRight className="h-4 w-4" />
+                          </a>
+                        )}
+                      </div>
+                      <div className="process-card__mark" aria-hidden />
+                    </motion.article>
+                  );
+                },
+              )}
             </div>
           </div>
         </motion.section>
@@ -778,7 +799,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="book" className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <section
+          id="book"
+          className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+        >
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
