@@ -471,7 +471,7 @@ export default function HomePage() {
               <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
                 Get Your AC Cooling
               </span>
-              <span className="block whitespace-nowrap sm:inline sm:whitespace-normal">
+              <span className="mt-1 block whitespace-nowrap sm:mt-0 sm:inline sm:whitespace-normal">
                 Again Today.
               </span>
             </motion.h1>
