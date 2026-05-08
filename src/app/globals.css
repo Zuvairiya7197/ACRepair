@@ -184,6 +184,10 @@ body {
   transition: color 520ms var(--process-ease), opacity 520ms var(--process-ease);
 }
 
+.process-card__mobile-label {
+  display: none;
+}
+
 .process-card__icon {
   display: inline-flex;
   height: 2.6rem;
@@ -362,6 +366,10 @@ body {
 }
 
 @media (max-width: 767px) {
+  body {
+    padding-bottom: 6.75rem;
+  }
+
   .process-accordion {
     min-height: auto;
     flex-direction: column;
@@ -382,35 +390,33 @@ body {
     min-height: 338px;
   }
 
-  .process-card__top {
-    align-items: flex-start;
+  .process-card__number {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
   }
 
-  .process-card__top::after {
-    position: absolute;
-    left: 0;
-    top: 2rem;
+  .process-card__mobile-label {
+    display: block;
     color: var(--process-muted);
     font-size: 0.72rem;
     font-weight: 900;
     letter-spacing: 0.14em;
+    line-height: 1.2;
     text-transform: uppercase;
-    content: attr(data-label);
+    white-space: nowrap;
+  }
+
+  .process-card.is-ready.is-active .process-card__mobile-label {
+    color: white;
   }
 
   .process-card__body {
     inset: auto 1.1rem 1.1rem;
   }
 
-  .process-card__label,
-  .process-card.is-active .process-card__label {
+  .process-card__label {
     display: none;
-    transform: rotate(0);
-    transform-origin: left top;
-    transition:
-      color 520ms var(--process-ease),
-      opacity 520ms var(--process-ease),
-      transform 640ms var(--process-ease);
   }
 
   .process-card h3 {
