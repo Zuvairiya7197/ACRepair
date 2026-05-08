@@ -645,7 +645,7 @@ export default function HomePage() {
                     style={{ flexGrow: isActive ? 6 : 1 }}
                   >
                     <div className="process-card__ambient" aria-hidden />
-                    <div className="process-card__top">
+                    <div className="process-card__top" data-label={label}>
                       <span className="process-card__number">{number}</span>
                       <span className="process-card__icon">
                         <Icon className="h-5 w-5" />

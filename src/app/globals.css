@@ -382,12 +382,29 @@ body {
     min-height: 338px;
   }
 
+  .process-card__top {
+    align-items: flex-start;
+  }
+
+  .process-card__top::after {
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    color: var(--process-muted);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    content: attr(data-label);
+  }
+
   .process-card__body {
     inset: auto 1.1rem 1.1rem;
   }
 
   .process-card__label,
   .process-card.is-active .process-card__label {
+    display: none;
     transform: rotate(0);
     transform-origin: left top;
     transition:
