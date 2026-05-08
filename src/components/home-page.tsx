@@ -10,7 +10,10 @@ import {
   ChevronRight,
   Clock3,
   CreditCard,
+  Globe,
   Headphones,
+  Mail,
+  MapPin,
   Menu,
   Phone,
   ShieldCheck,
@@ -28,6 +31,8 @@ import Lenis from "@studio-freight/lenis";
 
 const phone = "+15550142487";
 const whatsapp = "https://wa.me/15550142487";
+const email = "hello@airswift.example";
+const address = "Downtown Service Hub, Austin, TX";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -66,33 +71,130 @@ const stagger: Variants = {
 const services = [
   {
     icon: Wrench,
+    tag: "Diagnostics",
     title: "AC Repair",
     copy: "Rapid diagnostics for cooling failure, leakage, noise, and sensor issues.",
+    detail: "Most faults fixed same day",
   },
   {
     icon: AirVent,
+    tag: "Setup",
     title: "Installation",
     copy: "Clean split and window AC installs with precise mounting and airflow setup.",
+    detail: "Leveling, drainage, airflow check",
   },
   {
     icon: ThermometerSnowflake,
+    tag: "Efficiency",
     title: "Gas Refill",
     copy: "Pressure-tested refrigerant refill for efficient cooling and lower power bills.",
+    detail: "Leak check before refill",
   },
   {
     icon: Snowflake,
+    tag: "Care",
     title: "Maintenance",
     copy: "Deep cleaning, coil care, filter service, and preventive tune-ups.",
+    detail: "Cleaner air and faster cooling",
   },
   {
     icon: ShieldCheck,
+    tag: "Protection",
     title: "Annual Care",
     copy: "Scheduled protection plans for homes, rentals, and office cooling systems.",
+    detail: "Priority visits all season",
   },
   {
     icon: Zap,
+    tag: "Urgent",
     title: "Emergency Fix",
     copy: "Priority support for urgent breakdowns, available day and night.",
+    detail: "24/7 booking support",
+  },
+];
+
+const footerServices = [
+  "Emergency AC Repair",
+  "AC Installation",
+  "Gas Refill",
+  "Preventive Maintenance",
+  "Annual Care Plans",
+  "Commercial AC Service",
+];
+
+const contactDetails = [
+  {
+    icon: Phone,
+    label: "+1 (555) 014-2487",
+    href: `tel:${phone}`,
+  },
+  {
+    icon: Mail,
+    label: email,
+    href: `mailto:${email}`,
+  },
+  {
+    icon: MapPin,
+    label: address,
+    href: "https://maps.google.com",
+  },
+  {
+    icon: Clock3,
+    label: "Open 24/7 for bookings",
+    href: "#book",
+  },
+];
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <path d="M17.5 6.5h.01" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M14 8.2V6.5c0-.9.6-1.1 1-1.1h2.4V2h-3.3C10.8 2 10 4.5 10 6.1v2.1H7.7V12H10v10h4V12h3l.4-3.8H14Z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M6.9 8.9H3.2V21h3.7V8.9ZM5.1 3C3.9 3 3 3.8 3 4.9s.9 1.9 2.1 1.9 2.1-.8 2.1-1.9S6.3 3 5.1 3Zm8 5.9H9.6V21h3.7v-6.4c0-1.7.8-2.7 2.1-2.7 1.2 0 1.8.8 1.8 2.7V21H21v-6.9c0-3.5-1.8-5.5-4.5-5.5-1.6 0-2.8.8-3.4 1.7V8.9Z" />
+    </svg>
+  );
+}
+
+const socialLinks = [
+  {
+    icon: InstagramIcon,
+    label: "Instagram",
+    href: "#",
+  },
+  {
+    icon: FacebookIcon,
+    label: "Facebook",
+    href: "#",
+  },
+  {
+    icon: LinkedinIcon,
+    label: "LinkedIn",
+    href: "#",
   },
 ];
 
@@ -121,24 +223,40 @@ const features = [
 
 const steps = [
   {
+    label: "CONTACT US",
+    number: "01",
+    icon: Headphones,
+    title: "Tell Us What's Wrong",
+    copy: "Tell us what your AC is doing and where you need support.",
+  },
+  {
+    label: "PICK A TIME",
+    number: "02",
     icon: CalendarCheck,
-    title: "Book Service",
-    copy: "Pick a time in under a minute.",
+    title: "Choose Your Slot",
+    copy: "Choose a same-day slot that fits your home or business schedule.",
   },
   {
+    label: "GET A SERVICE",
+    number: "03",
     icon: AirVent,
-    title: "Technician Arrives",
-    copy: "A verified expert reaches your doorstep.",
+    title: "Expert Care Arrives",
+    copy: "A verified technician arrives, diagnoses the issue, and fixes it cleanly.",
   },
   {
-    icon: CheckCircle2,
-    title: "Repair Done",
-    copy: "Issue fixed, tested, and explained clearly.",
-  },
-  {
+    label: "PAY SAFELY",
+    number: "04",
     icon: CreditCard,
-    title: "Payment",
-    copy: "Pay securely after the work is complete.",
+    title: "Approve and Pay",
+    copy: "Approve transparent pricing and pay securely after the work is complete.",
+  },
+  {
+    label: "READY?",
+    number: "05",
+    icon: CheckCircle2,
+    title: "Start Cooling Today",
+    copy: "Your cool comfort starts today.",
+    cta: "Book AC Service",
   },
 ];
 
@@ -278,6 +396,7 @@ function Navbar() {
 
 export default function HomePage() {
   const { scrollYProgress } = useScroll();
+  const [activeStep, setActiveStep] = useState(4);
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 90,
     damping: 24,
@@ -384,38 +503,91 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.18 }}
-          className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8"
+          className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
         >
-          <SectionLabel>Expert cooling care</SectionLabel>
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col justify-between gap-5 md:flex-row md:items-end"
-          >
-            <h2 className="max-w-2xl text-4xl font-black tracking-normal text-[#1f5f53] sm:text-5xl">
-              Services built for urgent fixes and long-term comfort.
-            </h2>
-            <p className="max-w-md text-base leading-7 text-[#4f8d80]">
-              Every visit includes inspection, transparent pricing, clean repair
-              work, and final cooling checks.
-            </p>
-          </motion.div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map(({ icon: Icon, title, copy }) => (
-              <motion.article
-                key={title}
-                variants={fadeUp}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group rounded-2xl border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur transition hover:shadow-[0_20px_60px_rgba(31,95,83,0.14)]"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e5f3ec] text-[#1f5f53] transition group-hover:bg-[#1f5f53] group-hover:text-white">
-                  <Icon className="h-6 w-6" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(191,229,210,0.58),transparent_24rem),radial-gradient(circle_at_82%_20%,rgba(174,220,255,0.46),transparent_26rem)]" />
+          <div className="relative mx-auto max-w-7xl">
+            <SectionLabel>Expert cooling care</SectionLabel>
+            <motion.div
+              variants={fadeUp}
+              className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end"
+            >
+              <div>
+                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#1f5f53] sm:text-5xl">
+                  Premium AC services with zero guesswork.
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-7 text-[#4f8d80]">
+                  From urgent repairs to seasonal care, every visit includes a
+                  clear diagnosis, upfront pricing, clean workmanship, and final
+                  cooling performance checks.
+                </p>
+              </div>
+
+              <div className="relative overflow-hidden rounded-[28px] border border-[#1f5f53]/10 bg-white/70 p-5 shadow-[0_26px_80px_rgba(31,95,83,0.12)] backdrop-blur-xl">
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(229,243,236,0.74),rgba(231,244,255,0.62))]" />
+                <div className="relative flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#1f5f53] text-white shadow-[0_18px_44px_rgba(31,95,83,0.2)]">
+                    <ThermometerSnowflake className="h-6 w-6 text-[#bfe5d2]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                      Same-day cooling audit
+                    </p>
+                    <h3 className="mt-2 text-xl font-black text-[#1f5f53]">
+                      We inspect, repair, test, and explain before we leave.
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="mt-7 text-xl font-black text-[#1f5f53]">
-                  {title}
-                </h3>
-                <p className="mt-3 leading-7 text-[#4f8d80]">{copy}</p>
-              </motion.article>
-            ))}
+                <div className="relative mt-6 grid gap-3 sm:grid-cols-3">
+                  {["Verified techs", "Clear estimate", "Cooling proof"].map(
+                    (item) => (
+                      <div
+                        key={item}
+                        className="rounded-2xl bg-white/72 px-4 py-3 text-sm font-black text-[#1f5f53] shadow-sm"
+                      >
+                        <CheckCircle2 className="mb-2 h-4 w-4 text-[#5f9a8f]" />
+                        {item}
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map(({ icon: Icon, tag, title, copy, detail }, index) => (
+                <motion.article
+                  key={title}
+                  variants={fadeUp}
+                  whileHover={{ y: -10, scale: 1.015 }}
+                  className="group relative min-h-[310px] overflow-hidden rounded-[28px] border border-[#1f5f53]/10 bg-white/72 p-6 shadow-[0_18px_58px_rgba(31,95,83,0.08)] backdrop-blur-xl transition hover:border-[#5f9a8f]/28 hover:shadow-[0_30px_90px_rgba(31,95,83,0.16)]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(191,229,210,0.7),transparent_15rem),linear-gradient(145deg,rgba(255,255,255,0.74),rgba(231,244,255,0.3))] opacity-80 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-[#1f5f53]/10 bg-white/32 transition duration-500 group-hover:scale-125" />
+                  <div className="relative flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e5f3ec] text-[#1f5f53] shadow-sm transition duration-500 group-hover:-translate-y-1 group-hover:bg-[#1f5f53] group-hover:text-white group-hover:shadow-[0_18px_44px_rgba(31,95,83,0.18)]">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <span className="rounded-full border border-[#1f5f53]/10 bg-white/68 px-3 py-1 text-xs font-black text-[#5f9a8f]">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <div className="relative mt-8">
+                    <p className="text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                      {tag}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-black tracking-normal text-[#1f5f53]">
+                      {title}
+                    </h3>
+                    <p className="mt-4 leading-7 text-[#4f8d80]">{copy}</p>
+                  </div>
+                  <div className="relative mt-7 flex items-center gap-3 border-t border-[#1f5f53]/10 pt-5 text-sm font-black text-[#1f5f53]">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#5f9a8f]" />
+                    {detail}
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </motion.section>
 
@@ -458,38 +630,68 @@ export default function HomePage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.22 }}
-          className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8"
+          className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
         >
-          <SectionLabel>Simple process</SectionLabel>
-          <motion.h2
-            variants={fadeUp}
-            className="max-w-3xl text-4xl font-black tracking-normal text-[#1f5f53] sm:text-5xl"
-          >
-            Four steps from hot room to cool air.
-          </motion.h2>
-          <div className="mt-12 overflow-x-auto pb-3">
-            <div className="grid min-w-[850px] grid-cols-4 gap-5">
-              {steps.map(({ icon: Icon, title, copy }, index) => (
-                <motion.article
-                  key={title}
-                  variants={fadeUp}
-                  className="relative rounded-2xl border border-[#1f5f53]/10 bg-white/86 p-6 shadow-[0_24px_80px_rgba(31,95,83,0.12)]"
-                >
-                  {index < steps.length - 1 && (
-                    <div className="absolute left-[calc(100%-10px)] top-12 z-10 h-px w-10 bg-[#5f9a8f]/35" />
-                  )}
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-black text-[#5f9a8f]">
-                      0{index + 1}
-                    </span>
-                    <Icon className="h-6 w-6 text-[#1f5f53]" />
-                  </div>
-                  <h3 className="mt-12 text-xl font-black text-[#1f5f53]">
-                    {title}
-                  </h3>
-                  <p className="mt-3 leading-7 text-[#4f8d80]">{copy}</p>
-                </motion.article>
-              ))}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_28%,rgba(151,224,199,0.3),transparent_20rem),radial-gradient(circle_at_84%_18%,rgba(174,220,255,0.36),transparent_24rem)]" />
+          <div className="relative mx-auto max-w-7xl">
+            <SectionLabel>Simple process</SectionLabel>
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col justify-between gap-5 md:flex-row md:items-end"
+            >
+              <h2 className="max-w-3xl text-4xl font-black tracking-normal text-[#1f5f53] sm:text-5xl">
+                Five calm steps from warm air to cool comfort.
+              </h2>
+              <p className="max-w-md text-base leading-7 text-[#4f8d80]">
+                Tap or hover through the service flow. Each step stays simple,
+                secure, and built around your schedule.
+              </p>
+            </motion.div>
+
+            <div
+              className="process-accordion mt-12"
+              onMouseLeave={() => setActiveStep(4)}
+            >
+              {steps.map(({ icon: Icon, number, label, title, copy, cta }, index) => {
+                const isActive = activeStep === index;
+                const isReady = index === steps.length - 1;
+
+                return (
+                  <motion.article
+                    key={label}
+                    variants={fadeUp}
+                    tabIndex={0}
+                    aria-expanded={isActive}
+                    onMouseEnter={() => setActiveStep(index)}
+                    onFocus={() => setActiveStep(index)}
+                    onClick={() => setActiveStep(index)}
+                    className={`process-card ${isActive ? "is-active" : ""} ${
+                      isReady ? "is-ready" : ""
+                    }`}
+                    style={{ flexGrow: isActive ? 6 : 1 }}
+                  >
+                    <div className="process-card__ambient" aria-hidden />
+                    <div className="process-card__top">
+                      <span className="process-card__number">{number}</span>
+                      <span className="process-card__icon">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                    </div>
+                    <div className="process-card__body">
+                      <p className="process-card__label">{label}</p>
+                      <h3>{title}</h3>
+                      <p className="process-card__copy">{copy}</p>
+                      {cta && (
+                        <a href="#book" className="process-card__cta">
+                          {cta}
+                          <ChevronRight className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                    <div className="process-card__mark" aria-hidden />
+                  </motion.article>
+                );
+              })}
             </div>
           </div>
         </motion.section>
@@ -589,58 +791,137 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="bg-white px-4 pb-28 pt-16 sm:px-6 md:pb-10 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#e5f3ec] text-[#1f5f53]">
-                <Snowflake className="h-5 w-5" />
-              </span>
-              <span className="text-lg font-black text-[#1f5f53]">AirSwift</span>
+      <footer className="relative overflow-hidden bg-white px-4 pb-28 pt-16 sm:px-6 md:pb-10 lg:px-8">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(229,243,236,0.88),transparent_24rem),radial-gradient(circle_at_88%_18%,rgba(231,244,255,0.72),transparent_26rem)]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_1.85fr]">
+            <div className="rounded-[28px] border border-[#1f5f53]/10 bg-[#f6fbf8]/78 p-7 shadow-[0_24px_80px_rgba(31,95,83,0.1)] backdrop-blur-xl">
+              <a
+                href="#home"
+                aria-label="AirSwift home"
+                className="inline-flex items-center gap-3"
+              >
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1f5f53] text-white shadow-[0_16px_44px_rgba(31,95,83,0.18)]">
+                  <Snowflake className="h-7 w-7 fill-[#bfe5d2]/20 text-[#bfe5d2]" />
+                </span>
+                <span>
+                  <span className="block text-2xl font-black tracking-normal text-[#1f5f53]">
+                    AirSwift
+                  </span>
+                  <span className="mt-1 block text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                    AC Repair Services
+                  </span>
+                </span>
+              </a>
+              <h2 className="mt-8 max-w-md text-3xl font-black leading-tight tracking-normal text-[#1f5f53]">
+                Your AC repair services for fast, reliable cooling care.
+              </h2>
+              <p className="mt-4 max-w-md leading-7 text-[#4f8d80]">
+                Premium AC repair, installation, gas refill, maintenance, and
+                annual care for homes, rentals, offices, and retail spaces.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1f5f53] px-5 py-3 text-sm font-black text-white shadow-[0_18px_44px_rgba(31,95,83,0.18)] transition hover:-translate-y-1"
+                >
+                  <CalendarCheck className="h-4 w-4 text-[#bfe5d2]" />
+                  Book Service
+                </a>
+                <a
+                  href={`tel:${phone}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-[#1f5f53] shadow-sm transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(31,95,83,0.12)]"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+              </div>
             </div>
-            <p className="mt-5 max-w-sm leading-7 text-[#4f8d80]">
-              Premium AC repair and care for homes, rentals, offices, and retail
-              spaces.
-            </p>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="rounded-[24px] border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-sm font-black uppercase tracking-normal text-[#1f5f53]">
+                  Services
+                </h3>
+                <div className="mt-5 grid gap-3">
+                  {footerServices.map((service) => (
+                    <a
+                      key={service}
+                      className="group flex items-center gap-3 text-sm font-bold text-[#4f8d80] transition hover:text-[#1f5f53]"
+                      href="#services"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#9ccfc0] transition group-hover:scale-125 group-hover:bg-[#1f5f53]" />
+                      {service}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[24px] border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-sm font-black uppercase tracking-normal text-[#1f5f53]">
+                  Contact
+                </h3>
+                <div className="mt-5 grid gap-4">
+                  {contactDetails.map(({ icon: Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      className="group flex items-start gap-3 text-sm font-bold leading-6 text-[#4f8d80] transition hover:text-[#1f5f53]"
+                    >
+                      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e5f3ec] text-[#1f5f53] transition group-hover:-translate-y-0.5 group-hover:bg-[#1f5f53] group-hover:text-white">
+                        <Icon className="h-4 w-4" />
+                      </span>
+                      <span>{label}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[24px] border border-[#1f5f53]/10 bg-white/78 p-6 shadow-sm backdrop-blur">
+                <h3 className="text-sm font-black uppercase tracking-normal text-[#1f5f53]">
+                  Social
+                </h3>
+                <p className="mt-5 text-sm font-semibold leading-6 text-[#4f8d80]">
+                  Follow updates, seasonal AC care tips, and service offers.
+                </p>
+                <div className="mt-5 flex gap-3">
+                  {socialLinks.map(({ icon: Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      aria-label={`Follow AirSwift on ${label}`}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#1f5f53]/10 bg-[#e5f3ec] text-[#1f5f53] shadow-sm transition hover:-translate-y-1 hover:bg-[#1f5f53] hover:text-white hover:shadow-[0_16px_36px_rgba(31,95,83,0.16)]"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  ))}
+                </div>
+                <a
+                  href="#home"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-black text-[#1f5f53] transition hover:text-[#5f9a8f]"
+                >
+                  <Globe className="h-4 w-4" />
+                  airswift.example
+                </a>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="font-black text-[#1f5f53]">Contact</h3>
-            <a
-              className="mt-4 block text-[#4f8d80] transition hover:text-[#1f5f53]"
-              href={`tel:${phone}`}
-            >
-              +1 (555) 014-2487
-            </a>
-            <a
-              className="mt-3 block text-[#4f8d80] transition hover:text-[#1f5f53]"
-              href="mailto:hello@airswift.example"
-            >
-              hello@airswift.example
-            </a>
-          </div>
-          <div>
-            <h3 className="font-black text-[#1f5f53]">Services</h3>
-            {services.slice(0, 4).map((service) => (
-              <a
-                key={service.title}
-                className="mt-3 block text-[#4f8d80] transition hover:text-[#1f5f53]"
-                href="#services"
-              >
-                {service.title}
+
+          <div className="mt-8 flex flex-col justify-between gap-3 border-t border-[#1f5f53]/10 pt-6 text-sm font-semibold text-[#5f9a8f] md:flex-row md:items-center">
+            <p>© 2026 AirSwift AC Repair Services. All rights reserved.</p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              <a href="#services" className="transition hover:text-[#1f5f53]">
+                Services
               </a>
-            ))}
-          </div>
-          <div>
-            <h3 className="font-black text-[#1f5f53]">Social</h3>
-            {["Instagram", "Facebook", "LinkedIn"].map((item) => (
-              <a
-                key={item}
-                className="mt-3 block text-[#4f8d80] transition hover:text-[#1f5f53]"
-                href="#"
-              >
-                {item}
+              <a href="#process" className="transition hover:text-[#1f5f53]">
+                Process
               </a>
-            ))}
+              <a href="#book" className="transition hover:text-[#1f5f53]">
+                Book
+              </a>
+            </div>
           </div>
         </div>
       </footer>

@@ -5,6 +5,14 @@
 :root {
   color-scheme: light;
   background: #f4faf6;
+  --process-ink: #174b43;
+  --process-muted: #5f9187;
+  --process-mint: #dff5eb;
+  --process-blue: #e7f4ff;
+  --process-panel: rgba(255, 255, 255, 0.68);
+  --process-border: rgba(31, 95, 83, 0.12);
+  --process-shadow: 0 28px 90px rgba(31, 95, 83, 0.13);
+  --process-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -37,6 +45,351 @@ body {
 
 .text-balance {
   text-wrap: balance;
+}
+
+.process-accordion {
+  display: flex;
+  min-height: 430px;
+  gap: clamp(0.8rem, 1.4vw, 1.25rem);
+  align-items: stretch;
+}
+
+.process-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-width: 0;
+  min-height: 430px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid var(--process-border);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(239, 250, 246, 0.62)),
+    linear-gradient(135deg, var(--process-mint), var(--process-blue));
+  box-shadow: 0 16px 42px rgba(31, 95, 83, 0.07);
+  padding: clamp(1.1rem, 1.7vw, 1.45rem);
+  backdrop-filter: blur(24px);
+  transform: translateZ(0);
+  transition:
+    flex-grow 850ms var(--process-ease),
+    box-shadow 520ms var(--process-ease),
+    transform 520ms var(--process-ease),
+    border-color 520ms var(--process-ease),
+    background 520ms var(--process-ease);
+  will-change: flex-grow, transform;
+}
+
+.process-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(151, 224, 199, 0.55), transparent 18rem),
+    radial-gradient(circle at 86% 12%, rgba(183, 223, 255, 0.55), transparent 18rem);
+  content: "";
+  opacity: 0.56;
+  transition: opacity 520ms var(--process-ease), transform 850ms var(--process-ease);
+}
+
+.process-card::after {
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: 27px;
+  background: rgba(255, 255, 255, 0.34);
+  content: "";
+  opacity: 0;
+  transition: opacity 520ms var(--process-ease);
+}
+
+.process-card:focus-visible {
+  outline: 3px solid rgba(95, 154, 143, 0.36);
+  outline-offset: 4px;
+}
+
+.process-card.is-active {
+  border-color: rgba(95, 154, 143, 0.26);
+  box-shadow: var(--process-shadow);
+  transform: translateY(-8px);
+}
+
+.process-card.is-active::before {
+  opacity: 0.86;
+  transform: scale(1.08);
+}
+
+.process-card.is-active::after {
+  opacity: 1;
+}
+
+.process-card.is-ready.is-active {
+  border-color: rgba(31, 95, 83, 0.22);
+  background:
+    linear-gradient(135deg, rgba(31, 95, 83, 0.95), rgba(68, 158, 145, 0.88) 48%, rgba(174, 220, 255, 0.72)),
+    linear-gradient(135deg, #dff5eb, #e7f4ff);
+  box-shadow: 0 32px 100px rgba(31, 95, 83, 0.24);
+  color: white;
+}
+
+.process-card.is-ready.is-active .process-card__ambient {
+  opacity: 1;
+}
+
+.process-card__ambient {
+  position: absolute;
+  inset: -22%;
+  z-index: -1;
+  background:
+    radial-gradient(circle, rgba(219, 255, 241, 0.42) 0 9%, transparent 26%),
+    conic-gradient(from 120deg, transparent, rgba(196, 238, 255, 0.22), transparent 42%);
+  filter: blur(10px);
+  opacity: 0;
+  animation: process-glow 6.8s linear infinite;
+  transition: opacity 520ms var(--process-ease);
+}
+
+.process-card__top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.process-card__number {
+  color: var(--process-muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  transition: color 520ms var(--process-ease), opacity 520ms var(--process-ease);
+}
+
+.process-card__icon {
+  display: inline-flex;
+  height: 2.6rem;
+  width: 2.6rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--process-ink);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.64);
+  transition:
+    transform 520ms var(--process-ease),
+    background 520ms var(--process-ease),
+    color 520ms var(--process-ease);
+}
+
+.process-card__body {
+  position: absolute;
+  inset: auto clamp(1.1rem, 1.7vw, 1.45rem) clamp(1.1rem, 1.7vw, 1.45rem);
+  z-index: 1;
+  max-width: 25rem;
+  transform: translateY(12px);
+  transition: transform 640ms var(--process-ease);
+}
+
+.process-card__label {
+  width: max-content;
+  max-width: 100%;
+  color: var(--process-muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  opacity: 0.72;
+  text-transform: uppercase;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition:
+    color 520ms var(--process-ease),
+    opacity 520ms var(--process-ease),
+    transform 640ms var(--process-ease),
+    writing-mode 1ms linear 330ms;
+}
+
+.process-card h3 {
+  margin-top: 1rem;
+  max-width: 8rem;
+  color: var(--process-ink);
+  font-size: clamp(1.1rem, 1.35vw, 1.42rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    color 520ms var(--process-ease),
+    font-size 640ms var(--process-ease),
+    max-width 640ms var(--process-ease),
+    opacity 440ms var(--process-ease),
+    transform 640ms var(--process-ease);
+}
+
+.process-card__copy,
+.process-card__cta {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 440ms var(--process-ease),
+    transform 640ms var(--process-ease);
+}
+
+.process-card__copy {
+  margin-top: 1rem;
+  color: var(--process-muted);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.process-card__cta {
+  display: inline-flex;
+  min-height: 3.2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.35rem;
+  border-radius: 999px;
+  background: white;
+  padding: 0 1.35rem;
+  color: var(--process-ink);
+  font-size: 0.9rem;
+  font-weight: 900;
+  box-shadow: 0 18px 42px rgba(8, 44, 38, 0.18);
+}
+
+.process-card__cta:hover,
+.process-card__cta:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 54px rgba(8, 44, 38, 0.22);
+}
+
+.process-card__mark {
+  position: absolute;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  height: 5.2rem;
+  width: 5.2rem;
+  border: 1px solid rgba(31, 95, 83, 0.08);
+  border-radius: 32% 68% 54% 46%;
+  opacity: 0.28;
+  transform: rotate(16deg) scale(0.8);
+  transition: transform 720ms var(--process-ease), opacity 520ms var(--process-ease);
+}
+
+.process-card.is-active .process-card__body {
+  transform: translateY(0);
+}
+
+.process-card.is-active .process-card__label {
+  opacity: 0.88;
+  writing-mode: horizontal-tb;
+  transform: rotate(0);
+  transition:
+    color 520ms var(--process-ease),
+    opacity 520ms var(--process-ease),
+    transform 640ms var(--process-ease),
+    writing-mode 1ms linear;
+}
+
+.process-card.is-active h3 {
+  max-width: 24rem;
+  font-size: clamp(1.85rem, 3vw, 3.25rem);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-card.is-active .process-card__copy,
+.process-card.is-active .process-card__cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+
+.process-card.is-active .process-card__icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.process-card.is-active .process-card__mark {
+  opacity: 0.48;
+  transform: rotate(-8deg) scale(1.12);
+}
+
+.process-card.is-ready.is-active .process-card__number,
+.process-card.is-ready.is-active .process-card__label,
+.process-card.is-ready.is-active .process-card__copy,
+.process-card.is-ready.is-active h3 {
+  color: white;
+}
+
+.process-card.is-ready.is-active .process-card__icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.process-card.is-ready.is-active .process-card__mark {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+@keyframes process-glow {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@media (max-width: 767px) {
+  .process-accordion {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .process-card,
+  .process-card.is-active {
+    min-height: 132px;
+    transform: none;
+    transition:
+      min-height 720ms var(--process-ease),
+      box-shadow 520ms var(--process-ease),
+      border-color 520ms var(--process-ease),
+      background 520ms var(--process-ease);
+  }
+
+  .process-card.is-active {
+    min-height: 338px;
+  }
+
+  .process-card__body {
+    inset: auto 1.1rem 1.1rem;
+  }
+
+  .process-card__label,
+  .process-card.is-active .process-card__label {
+    writing-mode: horizontal-tb;
+    transform: rotate(0);
+    transition:
+      color 520ms var(--process-ease),
+      opacity 520ms var(--process-ease),
+      transform 640ms var(--process-ease);
+  }
+
+  .process-card h3 {
+    max-width: 100%;
+    font-size: 1.35rem;
+    opacity: 0;
+  }
+
+  .process-card.is-active h3 {
+    font-size: clamp(2rem, 10vw, 2.65rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
