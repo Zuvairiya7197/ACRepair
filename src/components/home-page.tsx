@@ -264,6 +264,7 @@ const testimonials = [
   {
     name: "Maya S.",
     role: "Homeowner",
+    service: "Emergency AC Repair",
     review:
       "The technician arrived in 35 minutes and had our bedroom AC cooling again before dinner.",
     avatar:
@@ -272,6 +273,7 @@ const testimonials = [
   {
     name: "Daniel R.",
     role: "Cafe Owner",
+    service: "Commercial Maintenance",
     review:
       "Premium experience from booking to payment. Clear pricing, clean work, and zero drama.",
     avatar:
@@ -280,6 +282,7 @@ const testimonials = [
   {
     name: "Priya K.",
     role: "Property Manager",
+    service: "Annual Care Plan",
     review:
       "We use them for multiple apartments now. Fast, polite, and consistently reliable.",
     avatar:
@@ -696,60 +699,111 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        <section id="reviews" className="overflow-hidden bg-[#edf7f1] py-24">
+        <section
+          id="reviews"
+          className="relative overflow-hidden bg-[#edf7f1] py-24"
+        >
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_12%,rgba(191,229,210,0.78),transparent_25rem),radial-gradient(circle_at_86%_16%,rgba(174,220,255,0.52),transparent_28rem),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(237,247,241,0.78))]" />
           <motion.div
             variants={stagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+            className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
           >
             <SectionLabel>Customer love</SectionLabel>
-            <motion.h2
-              variants={fadeUp}
-              className="max-w-3xl text-4xl font-black tracking-normal text-[#1f5f53] sm:text-5xl"
-            >
-              Reviews that sound like relief.
-            </motion.h2>
-          </motion.div>
-          <div className="mt-12 flex">
             <motion.div
-              className="flex gap-5"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+              variants={fadeUp}
+              className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end"
             >
-              {marqueeItems.map((item, index) => (
-                <article
-                  key={`${item.name}-${index}`}
-                  className="w-[320px] shrink-0 rounded-2xl border border-[#1f5f53]/10 bg-white/82 p-6 shadow-sm backdrop-blur sm:w-[420px]"
-                >
-                  <div className="flex gap-1 text-[#5f9a8f]">
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <Star key={starIndex} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="mt-6 min-h-24 text-lg font-semibold leading-8 text-[#1f5f53]">
-                    "{item.review}"
-                  </p>
-                  <div className="mt-7 flex items-center gap-3">
-                    <Image
-                      src={item.avatar}
-                      alt={`${item.name} customer portrait`}
-                      width={48}
-                      height={48}
-                      sizes="48px"
-                      className="rounded-2xl object-cover"
-                    />
-                    <div>
-                      <div className="font-black text-[#1f5f53]">
-                        {item.name}
-                      </div>
-                      <div className="text-sm font-medium text-[#4f8d80]">
-                        {item.role}
-                      </div>
+              <div>
+                <h2 className="max-w-3xl text-4xl font-black leading-tight tracking-normal text-[#1f5f53] sm:text-5xl">
+                  Reviews that feel calm, clear, and earned.
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-7 text-[#4f8d80]">
+                  Real visits, clear pricing, tidy repairs, and cool rooms.
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-3 rounded-[28px] border border-[#1f5f53]/10 bg-white/72 p-3 shadow-[0_24px_70px_rgba(31,95,83,0.1)] backdrop-blur-xl">
+                {[
+                  ["4.9", "Rating"],
+                  ["18k+", "Repairs"],
+                  ["24/7", "Care"],
+                ].map(([value, label]) => (
+                  <div
+                    key={label}
+                    className="rounded-2xl bg-[#e5f3ec]/72 px-4 py-3 text-center"
+                  >
+                    <div className="text-xl font-black text-[#1f5f53]">
+                      {value}
+                    </div>
+                    <div className="mt-1 text-[0.68rem] font-black uppercase tracking-normal text-[#5f9a8f]">
+                      {label}
                     </div>
                   </div>
-                </article>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+          <div className="relative mt-12 flex [mask-image:linear-gradient(90deg,transparent,black_9%,black_91%,transparent)]">
+            <motion.div
+              className="flex gap-6 px-4 sm:px-6 lg:px-8"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            >
+              {marqueeItems.map((item, index) => (
+                <figure
+                  key={`${item.name}-${index}`}
+                  className="group relative min-h-[270px] w-[320px] shrink-0 overflow-hidden rounded-[28px] border border-[#1f5f53]/10 bg-white/74 p-5 shadow-[0_22px_70px_rgba(31,95,83,0.11)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-[#5f9a8f]/30 hover:shadow-[0_34px_100px_rgba(31,95,83,0.18)] sm:w-[410px]"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_0%,rgba(191,229,210,0.72),transparent_16rem),linear-gradient(145deg,rgba(255,255,255,0.82),rgba(231,244,255,0.34))] opacity-90 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute -right-8 -top-10 text-[9rem] font-black leading-none text-[#1f5f53]/[0.045]">
+                    ”
+                  </div>
+                  <div className="relative flex items-start justify-between gap-4">
+                    <div className="flex gap-1 text-[#5f9a8f]">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star
+                          key={starIndex}
+                          className="h-4 w-4 fill-current drop-shadow-sm"
+                        />
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1f5f53]/10 bg-white/76 px-3 py-1 text-xs font-black text-[#1f5f53]">
+                      <BadgeCheck className="h-3.5 w-3.5 text-[#5f9a8f]" />
+                      Verified
+                    </span>
+                  </div>
+                  <blockquote className="relative mt-6 min-h-20 text-lg font-black leading-7 tracking-normal text-[#1f5f53] sm:text-xl sm:leading-8">
+                    “{item.review}”
+                  </blockquote>
+                  <div className="relative mt-6 rounded-[22px] border border-[#1f5f53]/10 bg-white/68 p-3 shadow-sm">
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <div className="absolute inset-0 rounded-2xl bg-[#5f9a8f]/22 blur-md" />
+                        <Image
+                          src={item.avatar}
+                          alt={`${item.name} customer portrait`}
+                          width={50}
+                          height={50}
+                          sizes="50px"
+                          className="relative h-[50px] w-[50px] rounded-2xl object-cover ring-2 ring-white"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <figcaption className="font-black text-[#1f5f53]">
+                          {item.name}
+                        </figcaption>
+                        <div className="text-sm font-bold text-[#4f8d80]">
+                          {item.role}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-3 text-xs font-black uppercase tracking-normal text-[#5f9a8f]">
+                      {item.service}
+                    </div>
+                  </div>
+                </figure>
               ))}
             </motion.div>
           </div>
